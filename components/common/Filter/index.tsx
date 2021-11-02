@@ -54,11 +54,12 @@ const Filter = (): JSX.Element => {
           const key = index === 0 ? -1 : index - 1;
           return (
             <S.Option
-              onClick={() =>
+              onClick={() => {
+                setOpen(false);
                 onChangeFilter(
                   FilterEnum[FilterEnum[key] as keyof typeof FilterEnum],
-                )
-              }
+                );
+              }}
               key={value}
               showing={filter === key}
             >
