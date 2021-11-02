@@ -80,5 +80,6 @@ export const OptionWrap = styled.div<{ open: boolean }>`
   text-align: center;
   margin-top: 8px;
   opacity: ${(props) => (props.open ? 1 : 0)};
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
   transition: 0.2s ease-in-out;
 `;
