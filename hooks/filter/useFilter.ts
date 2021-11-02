@@ -1,15 +1,29 @@
-import { FilterEnum } from 'enum/FilterEnum';
-import { useCallback, useMemo, useState } from 'react';
+import { FilterEnum, FilterToTitle } from 'enum/FilterEnum';
+import { useCallback, useMemo } from 'react';
+import { useRecoilState } from 'recoil';
+import { filterState } from 'store/filter';
 
-const useFilter = (): [FilterEnum, string[], (value: FilterEnum) => void] => {
-  const [filter, setFilter] = useState<FilterEnum>(FilterEnum.ALL);
+const useFilter = (): [
+  FilterEnum,
+  FilterToTitle[],
+  (value: FilterEnum) => void,
+] => {
+  const [filter, setFilter] = useRecoilState<FilterEnum>(filterState);
 
   const onChangeFilter = useCallback((value: FilterEnum) => {
     setFilter(value);
   }, []);
 
   const FilterList = useMemo(() => {
-    return ['전체기수', '1기', '2기', '3기', '4기', '5기', '6기'];
+    return [
+      FilterToTitle.ALL,
+      FilterToTitle.GEN1,
+      FilterToTitle.GEN2,
+      FilterToTitle.GEN3,
+      FilterToTitle.GEN4,
+      FilterToTitle.GEN5,
+      FilterToTitle.GEN6,
+    ];
   }, []);
 
   return [filter, FilterList, onChangeFilter];

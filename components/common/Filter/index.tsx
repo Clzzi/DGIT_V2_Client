@@ -50,7 +50,7 @@ const Filter = (): JSX.Element => {
         </span>
       </S.Filter>
       <S.OptionWrap open={open}>
-        {FilterList.map((value: string, index: number) => {
+        {FilterList.map((value: FilterToTitle, index: number) => {
           const key = index === 0 ? -1 : index - 1;
           return (
             <S.Option

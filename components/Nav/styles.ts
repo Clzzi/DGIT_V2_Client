@@ -38,8 +38,9 @@ export const NavButton = styled.div<{ showing: boolean }>`
   border-bottom: 2px solid
     ${(props) =>
       props.showing ? props.theme.navTitle : props.theme.background};
-
+  transition: 0.2s ease-in-out;
   & > div {
+    transition: 0.2s ease-in-out;
     font-size: ${FontConfig.font18};
     font-weight: bold;
     color: ${(props) =>
