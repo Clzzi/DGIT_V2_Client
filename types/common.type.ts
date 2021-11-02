@@ -1,4 +1,4 @@
-import { CSSProperties } from "styled-components";
+import { CSSProperties } from 'styled-components';
 
 export interface IFontConfig {
   font16: string;
@@ -15,3 +15,5 @@ export interface IButton {
   customStyle?: CSSProperties;
   click?: () => void | Promise<void>;
 }
+
+export type TNav = '종합' | '주간' | '주간기록';

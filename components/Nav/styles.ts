@@ -1,16 +1,23 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { FontConfig } from 'styles/FontConfig';
 
-export const Header = styled.header`
+export const Nav = styled.div`
   width: 100vw;
-  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 `;
 
-export const HeaderContent = styled.div`
+export const NavContent = styled.div`
   width: 1410px;
+  height: 80px;
+`;
+
+export const NavButtonWrap = styled.div`
+  width: 195px;
+  height: 100%;
+  margin-left: 18px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,12 +25,18 @@ export const HeaderContent = styled.div`
   align-items: center;
 `;
 
-export const HeaderButton = styled.div`
-  width: 162px;
-  height: 32px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: center;
-  align-items: center;  
+export const NavButton = styled.div<{ showing: boolean }>`
+  width: fit-content;
+  height: 33px;
+  cursor: pointer;
+  border-bottom: 2px solid
+    ${(props) =>
+      props.showing ? props.theme.navTitle : props.theme.background};
+
+  & > div {
+    font-size: ${FontConfig.font18};
+    font-weight: bold;
+    color: ${(props) =>
+      props.showing ? props.theme.navTitle : props.theme.navNoneSelect};
+  }
 `;

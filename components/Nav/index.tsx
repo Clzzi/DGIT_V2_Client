@@ -1,34 +1,39 @@
+import { useState } from 'react';
+import { TNav } from 'types/common.type';
+import NavButton from './NavButton';
 import * as S from './styles';
-import LOGO from 'assets/Logo.svg';
-import { useTheme } from 'styled-components';
-import Button from 'components/common/Button';
 
 const Nav = (): JSX.Element => {
-  const theme = useTheme();
+  const [navState, setNavState] = useState<TNav>('종합');
   return (
-    <S.Header>
-      <S.HeaderContent>
-        <LOGO />
-        <S.HeaderButton>
-          <Button
-            message="로그인"
-            fontColor={theme.background}
-            backgroundColor={theme.mainContent}
+    <S.Nav>
+      <S.NavContent>
+        <S.NavButtonWrap>
+          <NavButton
+            title="종합"
+            showing={navState === '종합'}
             click={() => {
-              console.log('login');
+              setNavState('종합');
             }}
           />
-          <Button
-            message="도움말"
-            fontColor={theme.mainContent}
-            backgroundColor={theme.background}
+          <NavButton
+            title="주간"
+            showing={navState === '주간'}
             click={() => {
-              console.log('help');
+              setNavState('주간');
             }}
           />
-        </S.HeaderButton>
-      </S.HeaderContent>
-    </S.Header>
+          <NavButton
+            title="주간기록"
+            showing={navState === '주간기록'}
+            click={() => {
+              setNavState('주간기록');
+            }}
+          />
+        </S.NavButtonWrap>
+        {/* filter */}
+      </S.NavContent>
+    </S.Nav>
   );
 };
 
