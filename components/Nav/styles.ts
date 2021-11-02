@@ -12,13 +12,18 @@ export const Nav = styled.div`
 export const NavContent = styled.div`
   width: 1410px;
   height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
 `;
 
 export const NavButtonWrap = styled.div`
+  display: inline-flex;
   width: 195px;
   height: 100%;
   margin-left: 18px;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
