@@ -1,14 +1,18 @@
+import { RecoilRoot } from 'recoil';
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
-import { lightTheme } from 'styles/ThemeConfig';
+import useTheme from 'hooks/util/useTheme';
+import { ThemeProvider } from 'styled-components';
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const theme = useTheme();
   return (
-    <ThemeProvider theme={lightTheme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <RecoilRoot>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </RecoilRoot>
   );
 };
 
