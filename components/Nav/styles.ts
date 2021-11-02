@@ -34,6 +34,7 @@ export const NavButton = styled.div<{ showing: boolean }>`
   width: fit-content;
   height: 33px;
   cursor: pointer;
+  user-select: none;
   border-bottom: 2px solid
     ${(props) =>
       props.showing ? props.theme.navTitle : props.theme.background};

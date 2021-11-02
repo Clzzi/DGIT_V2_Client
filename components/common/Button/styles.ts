@@ -12,5 +12,6 @@ export const Button = styled.div<Omit<IButton, 'click' | 'message'>>`
   justify-content: center;
   align-items: center;
   text-align: center;
+  user-select: none;
   cursor: pointer;
 `;
