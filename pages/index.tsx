@@ -1,7 +1,12 @@
+import Nav from 'components/Nav';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return <div>test</div>;
+  return (
+    <div>
+      <Nav />
+    </div>
+  );
 };
 
 export default Home;
