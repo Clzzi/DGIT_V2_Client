@@ -1,35 +1,33 @@
 import * as S from './styles';
-import { useState } from 'react';
 import NavButton from './NavButton';
-import { TNav } from 'types/common.type';
+import useNav from 'hooks/nav/useNav';
 import Filter from 'components/common/Filter';
 
 const Nav = (): JSX.Element => {
-  const [navState, setNavState] = useState<TNav>('종합');
-  // 나중에 navState Hooks만들어서 state, handler 가져와주기
+  const [nav, onChangeNav] = useNav();
   return (
     <S.Nav>
       <S.NavContent>
         <S.NavButtonWrap>
           <NavButton
             title="종합"
-            showing={navState === '종합'}
+            showing={nav === '종합'}
             click={() => {
-              setNavState('종합');
+              onChangeNav('종합');
             }}
           />
           <NavButton
             title="주간"
-            showing={navState === '주간'}
+            showing={nav === '주간'}
             click={() => {
-              setNavState('주간');
+              onChangeNav('주간');
             }}
           />
           <NavButton
             title="주간기록"
-            showing={navState === '주간기록'}
+            showing={nav === '주간기록'}
             click={() => {
-              setNavState('주간기록');
+              onChangeNav('주간기록');
             }}
           />
         </S.NavButtonWrap>
