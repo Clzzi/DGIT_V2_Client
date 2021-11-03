@@ -5,6 +5,7 @@ import { getTheme } from 'util/getTheme';
 import { themeMode } from 'store/theme';
 import { ThemeEnum } from 'enum/ThemeEnum';
 import { darkTheme, lightTheme } from 'styles/ThemeConfig';
+import { DefaultTheme } from 'styled-components';
 
 const useTheme = () => {
   const [currentTheme, setCurrentTheme] = useRecoilState<ThemeEnum>(themeMode);
@@ -20,7 +21,7 @@ const useTheme = () => {
     setCurrentTheme(ThemeEnum.DARK);
   }, [ThemeEnum, setCurrentTheme, currentTheme]);
 
-  const theme = getTheme() ? darkTheme : lightTheme;
+  const theme: DefaultTheme = getTheme() ? darkTheme : lightTheme;
 
   return { theme, currentTheme, handleChangeTheme };
 };

@@ -13,8 +13,7 @@ const Button: React.FC<IButton> = ({
       fontColor={fontColor}
       backgroundColor={backgroundColor}
       customStyle={customStyle}
-      onClick={click}
-    >
+      onClick={click}>
       {message}
     </S.Button>
   );

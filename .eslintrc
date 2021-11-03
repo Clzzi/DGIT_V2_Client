@@ -1,11 +1,14 @@
 {
-  "extends": ["react-app", "prettier/prettier", "next/core-web-vitals"],
-  "plugins": ["react-hooks", "simple-import-sort", "prettier"],
+  "extends": [
+    "react-app",
+    "prettier/prettier",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react-hooks", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     "comma-dangle": ["error", "always-multiline"],
     "object-curly-spacing": ["error", "always"],
@@ -15,13 +18,8 @@
     "eol-last": ["error", "always"],
     "quotes": ["error", "single"],
     "no-tabs": "error",
-    "semi": ["error", "never"],
     "import/no-anonymous-default-export": 0,
     "object-shorthand": "error",
-    "padding-line-between-statements": [
-      "error",
-      { "blankLine": "always", "prev": "*", "next": "return" }
-    ],
     "@typescript-eslint/no-redeclare": 0
   }
 }

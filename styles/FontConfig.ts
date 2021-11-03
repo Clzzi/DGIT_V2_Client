@@ -1,4 +1,4 @@
-import { IFontConfig } from 'types/common.type';
+import { IFontConfig } from 'types/theme.type';
 
 const getRem = (value: number): string => {
   return `${value / 16}rem`;

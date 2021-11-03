@@ -35,8 +35,7 @@ const Filter = (): JSX.Element => {
     <S.FilterWrapper ref={el}>
       <S.Filter
         defaultValue={FilterEnum[-1]}
-        onClick={() => setOpen((prev) => !prev)}
-      >
+        onClick={() => setOpen((prev) => !prev)}>
         <span>
           {FilterToTitle[FilterEnum[filter] as keyof typeof FilterToTitle]}
         </span>
@@ -61,8 +60,7 @@ const Filter = (): JSX.Element => {
                 );
               }}
               key={value}
-              showing={filter === key}
-            >
+              showing={filter === key}>
               {value}
             </S.Option>
           );

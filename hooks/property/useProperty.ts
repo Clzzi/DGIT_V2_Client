@@ -18,14 +18,17 @@ const useProperty = () => {
     changePropertyList(nav);
   }, [nav]);
 
-  const changePropertyList = useCallback((nav: TNav) => {
-    if (nav === '주간기록') {
-      setPropertyList(['날짜', '프로필', '이름', '아이디', '기여도', 'Bio']);
-    } else {
-      // 주간 || 종합
-      setPropertyList(['순위', '프로필', '이름', '아이디', '기여도', 'Bio']);
-    }
-  }, [nav]);
+  const changePropertyList = useCallback(
+    (nav: TNav) => {
+      if (nav === '주간기록') {
+        setPropertyList(['날짜', '프로필', '이름', '아이디', '기여도', 'Bio']);
+      } else {
+        // 주간 || 종합
+        setPropertyList(['순위', '프로필', '이름', '아이디', '기여도', 'Bio']);
+      }
+    },
+    [nav],
+  );
 
   return { propertyList };
 };

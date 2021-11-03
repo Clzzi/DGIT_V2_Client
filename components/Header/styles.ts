@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Header = styled.header`
   width: 100vw;
@@ -25,5 +25,5 @@ export const HeaderButton = styled.div`
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
-  align-items: center;  
+  align-items: center;
 `;
