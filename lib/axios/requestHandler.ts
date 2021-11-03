@@ -1,7 +1,7 @@
-import { AxiosRequestConfig } from 'axios';
-import { getRefreshToken } from 'lib/api/auth/auth.api';
 import Token from 'lib/token';
+import { AxiosRequestConfig } from 'axios';
 import { IRefreshToken } from 'types/auth.type';
+import { getRefreshToken } from 'lib/api/auth/auth.api';
 
 const requestHandler = async (
   config: AxiosRequestConfig,

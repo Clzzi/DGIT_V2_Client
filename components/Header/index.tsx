@@ -2,27 +2,36 @@ import * as S from './styles';
 import LOGO from 'assets/Logo.svg';
 import { useTheme } from 'styled-components';
 import Button from 'components/common/Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from 'components/common/Modal';
 import Help from 'components/Help';
-import local from 'util/local';
 import { DAUTH_URL } from 'config/config.json';
 import { useRouter } from 'next/router';
+import Token from 'lib/token';
+import useLogin from 'hooks/login/useLogin';
 
 const Header = (): JSX.Element => {
-  const theme = useTheme();
   const router = useRouter();
+  const theme = useTheme();
   const [isHelpModal, setIsHelpModal] = useState<boolean>(false);
+  const { login } = useLogin();
+
+  useEffect(() => {
+    const { code } = router.query;
+    if (code !== (null || undefined)) {
+      login(code as string);
+    }
+  }, [login, router]);
 
   const SignButton = () =>
-    // 로그인관련 util만든 후 validation 필요
-    local.get('access_token') ? (
+    Token.getToken('access_token') ? (
       <Button
-        message="로그인"
+        message="로그아웃"
         fontColor={theme.background}
         backgroundColor={theme.mainContent}
         click={() => {
-          router.push(DAUTH_URL);
+          Token.removeToken();
+          router.push('/');
         }}
       />
     ) : (

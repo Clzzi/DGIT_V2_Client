@@ -1,3 +1,4 @@
+import { ILogin } from 'types/auth.type';
 import { IResponse } from 'types/response.type';
 
 export interface refreshTokenDto {
@@ -13,12 +14,5 @@ export interface IRefreshTokenResponse extends IResponse {
 }
 
 export interface ILoginResponse extends IResponse {
-  data: {
-    refreshToken: string;
-    token: string;
-    user: {
-      id: string;
-      name: string;
-    };
-  };
+  data: ILogin;
 }
