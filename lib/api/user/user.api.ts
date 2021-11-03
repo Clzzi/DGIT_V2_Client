@@ -12,3 +12,9 @@ export const getWeekUserRank = async (): Promise<IWeekUserRankResponse> => {
   const { data } = await axiosClient.get<IWeekUserRankResponse>(url);
   return data;
 };
+
+// export const getWeekTopUserList = async (): Promise<> => {
+//   const url: string = '/weekly/top';
+//   const { data } = await axiosClient.get<>(url);
+//   return data;
+// };

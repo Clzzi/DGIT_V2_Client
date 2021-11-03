@@ -18,6 +18,7 @@ const UserItem = ({
         <S.UserRank rank={rank}>{rank}</S.UserRank>
         <S.UserProfile>
           <Image
+            unoptimized
             loader={() => image}
             src={image}
             alt="profile"

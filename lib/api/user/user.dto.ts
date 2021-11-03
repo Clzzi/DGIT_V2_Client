@@ -8,3 +8,7 @@ export interface ITotalUserRankResponse extends IResponse {
 export interface IWeekUserRankResponse extends IResponse {
   data: IWeekUserRank[];
 }
+
+// export interface IWeekTopUserListResponse extends IResponse {
+//   data:
+// }

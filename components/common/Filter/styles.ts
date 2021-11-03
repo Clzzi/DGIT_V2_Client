@@ -14,6 +14,7 @@ export const Filter = styled.div`
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
+  visibility: hidden;
   &::-ms-expand {
     display: none;
   }
@@ -82,4 +83,5 @@ export const OptionWrap = styled.div<{ open: boolean }>`
   opacity: ${(props) => (props.open ? 1 : 0)};
   visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
   transition: 0.2s ease-in-out;
+  z-index: 999;
 `;

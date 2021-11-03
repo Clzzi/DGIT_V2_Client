@@ -16,3 +16,4 @@ export const weekUserState = atom<IWeekUserRank[]>({
   key: 'weekUserState',
   default: [] as IWeekUserRank[],
 });
+

@@ -31,3 +31,7 @@ export interface IUserItem {
   id: string;
   keep?: number;
 }
+
+// export interface IWeekTopList {
+
+// }

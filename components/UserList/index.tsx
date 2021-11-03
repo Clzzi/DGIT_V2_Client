@@ -1,14 +1,33 @@
 import UserItem from 'components/UserItem';
+import useNav from 'hooks/nav/useNav';
 import useTotalUser from 'hooks/totalUser/useTotalUser';
+import useWeekUser from 'hooks/weekUser/useWeekUser';
 import * as S from './styles';
 
 const UserList = (): JSX.Element => {
+  const [nav] = useNav();
   const { totalUser } = useTotalUser();
-  return (
-    <S.UserList>
-      <S.UserListContent>
-        {totalUser.users &&
-          totalUser.users.map((user, index) => {
+  const { weekUser } = useWeekUser();
+
+  const getUserList = () => {
+    if (totalUser.users && weekUser.length) {
+      switch (nav) {
+        case '주간':
+          return weekUser.map((user, index) => {
+            return (
+              <UserItem
+                key={user.githubUser.user.id}
+                image={user.githubUser.userImage}
+                name={user.githubUser.user.name}
+                id={user.githubUser.githubId}
+                commit={user.weeklyCommit}
+                intro={user.githubUser.bio}
+                rank={index + 1}
+              />
+            );
+          });
+        case '종합':
+          return totalUser.users.map((user, index) => {
             return (
               <UserItem
                 key={user.user.id}
@@ -21,8 +40,14 @@ const UserList = (): JSX.Element => {
                 keep={index === 0 ? totalUser.totalTop : undefined}
               />
             );
-          })}
-      </S.UserListContent>
+          });
+      }
+    }
+  };
+
+  return (
+    <S.UserList>
+      <S.UserListContent>{getUserList()}</S.UserListContent>
     </S.UserList>
   );
 };
