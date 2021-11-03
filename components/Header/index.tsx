@@ -5,11 +5,36 @@ import Button from 'components/common/Button';
 import { useState } from 'react';
 import Modal from 'components/common/Modal';
 import Help from 'components/Help';
+import local from 'util/local';
+import { DAUTH_URL } from 'config/config.json';
+import { useRouter } from 'next/router';
 
 const Header = (): JSX.Element => {
   const theme = useTheme();
-  const [isLoginModal, setIsLoginModal] = useState<boolean>(false);
+  const router = useRouter();
   const [isHelpModal, setIsHelpModal] = useState<boolean>(false);
+
+  const SignButton = () =>
+    // 로그인관련 util만든 후 validation 필요
+    local.get('access_token') ? (
+      <Button
+        message="로그인"
+        fontColor={theme.background}
+        backgroundColor={theme.mainContent}
+        click={() => {
+          router.push(DAUTH_URL);
+        }}
+      />
+    ) : (
+      <Button
+        message="로그인"
+        fontColor={theme.background}
+        backgroundColor={theme.mainContent}
+        click={() => {
+          router.push(DAUTH_URL);
+        }}
+      />
+    );
 
   return (
     <>
@@ -17,14 +42,7 @@ const Header = (): JSX.Element => {
         <S.HeaderContent>
           <LOGO />
           <S.HeaderButton>
-            <Button
-              message="로그인"
-              fontColor={theme.background}
-              backgroundColor={theme.mainContent}
-              click={() => {
-                setIsLoginModal(true);
-              }}
-            />
+            {SignButton()}
             <Button
               message="도움말"
               fontColor={theme.mainContent}
@@ -36,12 +54,6 @@ const Header = (): JSX.Element => {
           </S.HeaderButton>
         </S.HeaderContent>
       </S.Header>
-
-      {isLoginModal && (
-        <Modal set={setIsLoginModal}>
-          <div>test</div>
-        </Modal>
-      )}
 
       {isHelpModal && (
         <Modal set={setIsHelpModal} width="1060px" height="680px">

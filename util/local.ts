@@ -1,10 +1,10 @@
 export default class local {
   static get(key: string): string | null {
-    let test = null;
+    let item = null;
     if (typeof window !== 'undefined') {
-      test = localStorage.getItem(key);
+      item = localStorage.getItem(key);
     }
-    return test;
+    return item;
   }
   static set(key: string, value: string): void {
     localStorage.setItem(key, value);

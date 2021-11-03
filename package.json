@@ -8,6 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "jsonwebtoken": "^8.5.1",
     "next": "^12.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,10 +18,11 @@
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.15",
     "@svgr/webpack": "^5.5.0",
+    "@types/jsonwebtoken": "^8.5.5",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
+    "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "babel-plugin-styled-components": "^1.13.3",
