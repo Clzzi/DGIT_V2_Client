@@ -1,5 +1,7 @@
-import { IUserItem } from 'types/user.type';
 import * as S from './styles';
+import { IUserItem } from 'types/user.type';
+import Image from 'next/image';
+import { getMedal } from 'util/getMedal';
 
 const UserItem = ({
   image,
@@ -8,16 +10,28 @@ const UserItem = ({
   commit,
   intro,
   rank,
+  keep,
 }: IUserItem): JSX.Element => {
   return (
-    <S.UserItem>
-      <S.UserRank>{rank}</S.UserRank>
-      <S.UserProfile src={image} alt="profile" />
-      <S.UserName>{name}</S.UserName>
-      <S.UserId>{id}</S.UserId>
-      <S.UserCommit>{commit}</S.UserCommit>
-      <S.UserIntro>{intro}</S.UserIntro>
-    </S.UserItem>
+    <a href={`https://github.com/${id}`} target="_blank" rel="noreferrer">
+      <S.UserItem>
+        <S.UserRank rank={rank}>{rank}</S.UserRank>
+        <S.UserProfile>
+          <Image
+            loader={() => image}
+            src={image}
+            alt="profile"
+            width={70}
+            height={70}
+          />
+        </S.UserProfile>
+        <S.UserName medal={getMedal(rank)}>{name}</S.UserName>
+        {keep! >= 0 && <S.UserKeep>{keep}일 유지중 🔥</S.UserKeep>}
+        <S.UserId>{id}</S.UserId>
+        <S.UserCommit>{commit}</S.UserCommit>
+        <S.UserIntro>{intro}</S.UserIntro>
+      </S.UserItem>
+    </a>
   );
 };
 

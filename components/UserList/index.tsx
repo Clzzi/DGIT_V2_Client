@@ -17,7 +17,8 @@ const UserList = (): JSX.Element => {
                 id={user.githubId}
                 commit={user.totalContributions}
                 intro={user.bio}
-                rank={index}
+                rank={index + 1}
+                keep={index === 0 ? totalUser.totalTop : undefined}
               />
             );
           })}

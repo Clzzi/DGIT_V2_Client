@@ -5,6 +5,7 @@ declare module 'styled-components' {
     background: string;
     hightlight: string;
     mainContent: string;
+    mainBorder: string;
     mainProperty: string;
     mainPropertyBackground: string;
     navTitle: string;

@@ -29,4 +29,5 @@ export interface IUserItem {
   commit: number;
   intro: string;
   id: string;
+  keep?: number;
 }

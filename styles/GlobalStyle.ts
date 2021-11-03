@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     :visited,
     :link {
       text-decoration: none;
+      color: ${(props) => props.theme.mainContent}
     }
     ol,
     ul {
