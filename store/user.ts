@@ -1,10 +1,9 @@
-import { ITotalUserRank, IWeekUserRank } from 'types/user.type';
+import { ITotalUserRank, IUser, IWeekUserRank } from 'types/user.type';
 import { atom } from 'recoil';
-import { ILogin } from 'types/auth.type';
 
-export const userState = atom<ILogin>({
+export const userState = atom<IUser>({
   key: 'userState',
-  default: {} as ILogin,
+  default: {} as IUser,
 });
 
 export const totalUserState = atom<ITotalUserRank>({
@@ -17,3 +16,7 @@ export const weekUserState = atom<IWeekUserRank[]>({
   default: [] as IWeekUserRank[],
 });
 
+export const isMyAccountState = atom<boolean>({
+  key: 'isMyAccountState',
+  default: false as boolean,
+});
