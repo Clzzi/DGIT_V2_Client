@@ -1,10 +1,11 @@
-import BannerImage from 'assets/Banner.svg';
+import Image from 'next/image';
+import BannerImage from 'assets/Banner.png';
 import * as S from './styles';
 
 const Banner = (): JSX.Element => {
   return (
     <S.BannerWrap>
-      <BannerImage />
+      <Image src={BannerImage.src} alt="Banner" width={1410} height={170} />
     </S.BannerWrap>
   );
 };
