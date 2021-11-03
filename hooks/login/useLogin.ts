@@ -10,6 +10,7 @@ import { ILogin } from 'types/auth.type';
 const useLogin = () => {
   const router = useRouter();
   const [user, setUser] = useRecoilState<ILogin>(userState);
+  
   const login = useCallback(
     async (code: string) => {
       const dto: loginDto = {
