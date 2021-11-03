@@ -19,7 +19,7 @@ const useTheme = () => {
 
     local.set('theme', '1');
     setCurrentTheme(ThemeEnum.DARK);
-  }, [ThemeEnum, setCurrentTheme, currentTheme]);
+  }, [setCurrentTheme, currentTheme]);
 
   const theme: DefaultTheme = getTheme() ? darkTheme : lightTheme;
 

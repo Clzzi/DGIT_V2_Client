@@ -14,10 +14,6 @@ const useProperty = () => {
     'Bio',
   ]);
 
-  useEffect(() => {
-    changePropertyList(nav);
-  }, [nav]);
-
   const changePropertyList = useCallback(
     (nav: TNav) => {
       if (nav === '주간기록') {
@@ -27,8 +23,12 @@ const useProperty = () => {
         setPropertyList(['순위', '프로필', '이름', '아이디', '기여도', 'Bio']);
       }
     },
-    [nav],
+    [setPropertyList],
   );
+
+  useEffect(() => {
+    changePropertyList(nav);
+  }, [nav, changePropertyList]);
 
   return { propertyList };
 };

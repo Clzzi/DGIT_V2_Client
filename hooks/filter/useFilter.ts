@@ -10,9 +10,12 @@ const useFilter = (): [
 ] => {
   const [filter, setFilter] = useRecoilState<FilterEnum>(filterState);
 
-  const onChangeFilter = useCallback((value: FilterEnum) => {
-    setFilter(value);
-  }, []);
+  const onChangeFilter = useCallback(
+    (value: FilterEnum) => {
+      setFilter(value);
+    },
+    [setFilter],
+  );
 
   const FilterList = useMemo(() => {
     return [
