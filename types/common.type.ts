@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { CSSProperties } from 'styled-components';
 
 export interface IButton {
@@ -6,6 +7,13 @@ export interface IButton {
   backgroundColor: string;
   customStyle?: CSSProperties;
   click?: () => void | Promise<void>;
+}
+
+export interface IModal {
+  children: React.ReactNode;
+  width?: string;
+  height?: string;
+  set: Dispatch<SetStateAction<boolean>>;
 }
 
 export type TNav = '종합' | '주간' | '주간기록';

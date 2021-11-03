@@ -18,6 +18,7 @@ export const lightTheme: DefaultTheme = {
   modalBorder: '#E5E5E5',
   modalContent: '#2F2F2F',
   modalSubTitle: '#ACACAC',
+  modalBackground: 'rgba(60, 65, 89, 0.5)',
 };
 
 export const darkTheme: DefaultTheme = {
@@ -38,4 +39,5 @@ export const darkTheme: DefaultTheme = {
   modalBorder: '#E5E5E5',
   modalContent: '#2F2F2F',
   modalSubTitle: '#ACACAC',
+  modalBackground: 'rgba(60, 65, 89, 0.5)',
 };

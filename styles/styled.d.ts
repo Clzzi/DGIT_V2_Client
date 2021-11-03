@@ -19,5 +19,6 @@ declare module 'styled-components' {
     modalBorder: string;
     modalContent: string;
     modalSubTitle: string;
+    modalBackground: string;
   }
 }
