@@ -6,15 +6,16 @@ import { getRefreshToken } from 'lib/api/auth/auth.api';
 const requestHandler = async (
   config: AxiosRequestConfig,
 ): Promise<AxiosRequestConfig> => {
-  let accessToken: string | null = Token.getToken('access-token');
+  let accessToken: string | null = Token.getToken('access_token');
+  let usingRefreshToken: string | null = Token.getToken('refresh_token');
 
-  if (accessToken) {
-    const decode: any = Token.decodeToken('access-token');
+  if (accessToken && usingRefreshToken) {
+    const decode: any = Token.decodeToken('access_token');
     const nowDate: number = Date.now() / 1000;
 
     if (decode.exp < nowDate) {
       const data: IRefreshToken = await getRefreshToken({
-        refreshToken: accessToken,
+        refreshToken: usingRefreshToken,
       });
       Token.setToken('access_token', data.data);
       accessToken = data.data;
