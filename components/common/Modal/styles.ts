@@ -4,6 +4,7 @@ export const Modal = styled.div`
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: ${(props) => props.theme.background};
   border-radius: 10px;
 `;

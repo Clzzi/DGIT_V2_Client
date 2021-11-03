@@ -4,6 +4,7 @@ import { useTheme } from 'styled-components';
 import Button from 'components/common/Button';
 import { useState } from 'react';
 import Modal from 'components/common/Modal';
+import Help from 'components/Help';
 
 const Header = (): JSX.Element => {
   const theme = useTheme();
@@ -44,7 +45,7 @@ const Header = (): JSX.Element => {
 
       {isHelpModal && (
         <Modal set={setIsHelpModal} width="1060px" height="680px">
-          <div>test</div>
+          <Help />
         </Modal>
       )}
     </>
