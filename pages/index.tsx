@@ -2,6 +2,7 @@ import Banner from 'components/Banner';
 import Header from 'components/Header';
 import Nav from 'components/Nav';
 import PropertyBar from 'components/PropertyBar';
+import UserList from 'components/UserList';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       <Banner />
       <Nav />
       <PropertyBar />
+      <UserList />
     </div>
   );
 };

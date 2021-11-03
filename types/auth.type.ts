@@ -1,3 +1,5 @@
+import { IUser } from './user.type';
+
 export interface IRefreshToken {
   data: string;
 }
@@ -5,8 +7,5 @@ export interface IRefreshToken {
 export interface ILogin {
   refreshToken: string;
   token: string;
-  user: {
-    id: string;
-    name: string;
-  };
+  user: IUser;
 }

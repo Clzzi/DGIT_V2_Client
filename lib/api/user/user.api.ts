@@ -1,0 +1,14 @@
+import axiosClient from 'lib/axios/axiosClient';
+import { ITotalUserRankResponse, IWeekUserRankResponse } from './user.dto';
+
+export const getTotalUserRank = async (): Promise<ITotalUserRankResponse> => {
+  const url: string = '/total';
+  const { data } = await axiosClient.get<ITotalUserRankResponse>(url);
+  return data;
+};
+
+export const getWeekUserRank = async (): Promise<IWeekUserRankResponse> => {
+  const url: string = '/week';
+  const { data } = await axiosClient.get<IWeekUserRankResponse>(url);
+  return data;
+};

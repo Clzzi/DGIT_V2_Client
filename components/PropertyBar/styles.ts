@@ -1,21 +1,5 @@
 import styled from 'styled-components';
-
-const returnPropertyWidth = (number: number): string => {
-  switch (number) {
-    case 0:
-      return '136px';
-    case 1:
-      return '91px';
-    case 2:
-      return '136px';
-    case 3:
-      return '159px';
-    case 4:
-      return '151px';
-    default:
-      return 'auto';
-  }
-};
+import { getPropertyWidth } from 'util/getPropertyWidth';
 
 export const PropertyBar = styled.section`
   width: 100vw;
@@ -40,7 +24,7 @@ export const PropertyBarContent = styled.div`
 
 export const Property = styled.div<{ number: number }>`
   height: 100%;
-  width: ${(props) => returnPropertyWidth(props.number)};
+  width: ${(props) => getPropertyWidth(props.number)};
   color: ${(props) => props.theme.mainProperty};
   display: flex;
   justify-content: center;
