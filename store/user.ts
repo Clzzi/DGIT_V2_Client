@@ -30,3 +30,8 @@ export const isMyAccountState = atom<boolean>({
   key: 'isMyAccountState',
   default: false as boolean,
 });
+
+export const userIdState = atom<string[]>({
+  key: 'userIdState',
+  default: [] as string[],
+});
