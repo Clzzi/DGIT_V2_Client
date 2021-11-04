@@ -23,7 +23,7 @@ export interface IUser {
 }
 
 export interface IUserItem {
-  rank: number;
+  rank: string;
   image: string;
   name: string;
   commit: number;
@@ -32,6 +32,15 @@ export interface IUserItem {
   keep?: number;
 }
 
-// export interface IWeekTopList {
-
-// }
+export interface IWeekTopList {
+  idx: number;
+  date: string;
+  contribute: number;
+  weeklyTopGithubUser: {
+    githubId: string;
+    totalContributions: number;
+    userImage: string;
+    bio: string;
+    weeklyTopUser: IUser;
+  };
+}

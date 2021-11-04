@@ -1,6 +1,7 @@
 import UserItem from 'components/UserItem';
 import useNav from 'hooks/nav/useNav';
 import useTotalUser from 'hooks/totalUser/useTotalUser';
+import useWeekTop from 'hooks/weekTop/useWeekTop';
 import useWeekUser from 'hooks/weekUser/useWeekUser';
 import * as S from './styles';
 
@@ -8,6 +9,7 @@ const UserList = (): JSX.Element => {
   const [nav] = useNav();
   const { totalUser } = useTotalUser();
   const { weekUser } = useWeekUser();
+  const { weekTopUser } = useWeekTop();
 
   const getUserList = () => {
     if (totalUser.users && weekUser.length) {
@@ -22,7 +24,7 @@ const UserList = (): JSX.Element => {
                 id={user.githubUser.githubId}
                 commit={user.weeklyCommit}
                 intro={user.githubUser.bio}
-                rank={index + 1}
+                rank={(index + 1).toString()}
               />
             );
           });
@@ -36,11 +38,25 @@ const UserList = (): JSX.Element => {
                 id={user.githubId}
                 commit={user.totalContributions}
                 intro={user.bio}
-                rank={index + 1}
+                rank={(index + 1).toString()}
                 keep={index === 0 ? totalUser.totalTop : undefined}
               />
             );
           });
+        case '주간기록':
+          return weekTopUser.map((user) => {
+            return (
+              <UserItem
+                key={user.idx}
+                image={user.weeklyTopGithubUser.userImage}
+                name={user.weeklyTopGithubUser.weeklyTopUser.name}
+                commit={user.contribute}
+                rank={user.date}
+                intro={user.weeklyTopGithubUser.bio}
+                id={user.weeklyTopGithubUser.githubId}
+              />
+            );
+          }, []);
       }
     }
   };

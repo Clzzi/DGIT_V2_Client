@@ -3,6 +3,7 @@ import { IResponse } from 'types/response.type';
 import {
   IGetUserInfoResponse,
   ITotalUserRankResponse,
+  IWeekTopUserListResponse,
   IWeekUserRankResponse,
   setGithubIdDto,
 } from './user.dto';
@@ -19,11 +20,12 @@ export const getWeekUserRank = async (): Promise<IWeekUserRankResponse> => {
   return data;
 };
 
-// export const getWeekTopUserList = async (): Promise<> => {
-//   const url: string = '/weekly/top';
-//   const { data } = await axiosClient.get<>(url);
-//   return data;
-// };
+export const getWeekTopUserList =
+  async (): Promise<IWeekTopUserListResponse> => {
+    const url: string = '/weekly/top';
+    const { data } = await axiosClient.get<IWeekTopUserListResponse>(url);
+    return data;
+  };
 
 export const getUserInfo = async (): Promise<IGetUserInfoResponse> => {
   const url: string = '/user/my';

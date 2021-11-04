@@ -1,5 +1,10 @@
 import { IResponse } from 'types/response.type';
-import { ITotalUserRank, IUser, IWeekUserRank } from 'types/user.type';
+import {
+  ITotalUserRank,
+  IUser,
+  IWeekTopList,
+  IWeekUserRank,
+} from 'types/user.type';
 
 export interface ITotalUserRankResponse extends IResponse {
   data: ITotalUserRank;
@@ -13,9 +18,9 @@ export interface IGetUserInfoResponse extends Response {
   data: IUser;
 }
 
-// export interface IWeekTopUserListResponse extends IResponse {
-//   data:
-// }
+export interface IWeekTopUserListResponse extends IResponse {
+  data: IWeekTopList[];
+}
 
 export interface setGithubIdDto {
   githubId: string;
