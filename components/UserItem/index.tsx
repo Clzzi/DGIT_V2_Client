@@ -2,6 +2,7 @@ import * as S from './styles';
 import Image from 'next/image';
 import { getMedal } from 'util/getMedal';
 import { IUserItem } from 'types/common.type';
+import { getGithubURL } from 'util/getGithubURL';
 
 const UserItem = ({
   image,
@@ -13,7 +14,7 @@ const UserItem = ({
   keep,
 }: IUserItem): JSX.Element => {
   return (
-    <a href={`https://github.com/${id}`} target="_blank" rel="noreferrer">
+    <a href={getGithubURL(id)} target="_blank" rel="noreferrer">
       <S.UserItem>
         <S.UserRank rank={Number(rank)}>{rank}</S.UserRank>
         <S.UserProfile>
