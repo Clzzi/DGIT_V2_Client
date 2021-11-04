@@ -9,7 +9,7 @@ import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 const useAccount = (): [
   string,
   Dispatch<SetStateAction<string>>,
-  (set: Dispatch<SetStateAction<boolean>>) => Promise<void>,
+  (set: Dispatch<SetStateAction<boolean>>, isEdit: boolean) => Promise<void>,
 ] => {
   const [input, setInput] = useState<string>('');
   const { handleGetWeekTopUser } = useWeekTop();
@@ -18,7 +18,7 @@ const useAccount = (): [
   const { userId, handleGetList } = useHeader();
 
   const handleGithubId = useCallback(
-    async (set: Dispatch<SetStateAction<boolean>>) => {
+    async (set: Dispatch<SetStateAction<boolean>>, isEdit: boolean) => {
       if (input.length <= 0) {
         Toast.errorToast('ID를 입력해주세요');
         return;
@@ -38,7 +38,7 @@ const useAccount = (): [
         await handleGetWeekTopUser();
         await handleGetList();
         set(false);
-        Toast.successToast('계정이 추가되었습니다');
+        Toast.successToast(`계정이 ${isEdit ? '수정' : '추가'}되었습니다`);
       } catch (e: any) {
         Toast.errorToast(e.response.data.message);
       }

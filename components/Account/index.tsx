@@ -21,7 +21,7 @@ const Account = ({ isEdit, set }: IAccount): JSX.Element => {
         />
       </S.Content>
       <S.Button
-        onClick={() => handleGithubId(set)}
+        onClick={() => handleGithubId(set, isEdit)}
         showing={input ? true : false}>
         {isEdit ? '수정 ' : '신청'}
       </S.Button>
