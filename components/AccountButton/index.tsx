@@ -1,7 +1,7 @@
 import * as S from './styles';
 import UserAdd from 'assets/UserAdd.svg';
 import UserEdit from 'assets/UserEdit.svg';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Modal from 'components/common/Modal';
 import Account from 'components/Account';
 import useHeader from 'hooks/header/useHeader';
@@ -9,10 +9,6 @@ import useHeader from 'hooks/header/useHeader';
 const AccountButton = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { isMyAccount } = useHeader();
-
-  useEffect(() => {
-    console.log(isMyAccount);
-  }, [isMyAccount]);
 
   return (
     <>

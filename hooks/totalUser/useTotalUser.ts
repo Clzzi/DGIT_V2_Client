@@ -13,7 +13,7 @@ const useTotalUser = () => {
       const { data } = await getTotalUserRank();
       setTotalUser(data);
     } catch (e: any) {
-      console.log(e.data);
+      console.log(e);
     }
   }, [setTotalUser]);
 

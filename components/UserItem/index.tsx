@@ -15,7 +15,7 @@ const UserItem = ({
   return (
     <a href={`https://github.com/${id}`} target="_blank" rel="noreferrer">
       <S.UserItem>
-        <S.UserRank rank={rank}>{rank}</S.UserRank>
+        <S.UserRank rank={Number(rank)}>{rank}</S.UserRank>
         <S.UserProfile>
           <Image
             unoptimized
@@ -26,7 +26,7 @@ const UserItem = ({
             height={70}
           />
         </S.UserProfile>
-        <S.UserName medal={getMedal(rank)}>{name}</S.UserName>
+        <S.UserName medal={getMedal(Number(rank))}>{name}</S.UserName>
         {keep! >= 0 && <S.UserKeep>{keep}일 유지중 🔥</S.UserKeep>}
         <S.UserId>{id}</S.UserId>
         <S.UserCommit>{commit}</S.UserCommit>

@@ -18,7 +18,7 @@ const useLogin = () => {
         Token.setToken('refresh_token', data.refreshToken);
         router.push('/');
       } catch (e: any) {
-        console.log(e.data);
+        console.log(e);
       }
     },
     [router],

@@ -53,12 +53,11 @@ export const UserName = styled.div<{ medal: string | null }>`
   align-items: center;
   text-align: center;
   &::after {
-    position: absolute;
     content: url(${(props) => props.medal});
     width: 24px;
     height: 24px;
-    top: 0;
-    right: 12%;
+    margin: 2% 0px 0px 2%;
+    display: ${(props) => (props.medal ? 'block' : 'none')};
   }
 `;
 
@@ -89,6 +88,6 @@ export const UserIntro = styled.div`
 export const UserKeep = styled.span`
   position: absolute;
   top: 75%;
-  left: 18%;
+  left: 17.5%;
   font-size: ${FontConfig.font16};
 `;

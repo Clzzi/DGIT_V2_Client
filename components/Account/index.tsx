@@ -8,7 +8,9 @@ const Account = ({ isEdit }: { isEdit: boolean }): JSX.Element => {
     <S.Account>
       <S.Title>본인의 Github 아이디를 입력해주세요.</S.Title>
       <S.Content>
-        <S.SubTitle showing={true}>Github 아이디 (example-user)</S.SubTitle>
+        <S.SubTitle showing={input ? true : false}>
+          Github 아이디 (example-user)
+        </S.SubTitle>
         <S.Input
           placeholder="Github 아이디 (example-user)"
           value={input}
@@ -17,7 +19,9 @@ const Account = ({ isEdit }: { isEdit: boolean }): JSX.Element => {
           }
         />
       </S.Content>
-      <S.Button onClick={handleGithubId}>{isEdit ? '수정 ' : '신청'}</S.Button>
+      <S.Button onClick={handleGithubId} showing={input ? true : false}>
+        {isEdit ? '수정 ' : '신청'}
+      </S.Button>
     </S.Account>
   );
 };

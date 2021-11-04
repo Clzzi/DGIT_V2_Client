@@ -15,7 +15,7 @@ const useHeader = () => {
       const { data } = await getUserInfo();
       setUser(data);
     } catch (e: any) {
-      console.log(e.data);
+      console.log(e);
     }
   }, [setUser]);
 
@@ -29,7 +29,7 @@ const useHeader = () => {
         }
       });
     } catch (e: any) {
-      console.log(e.data);
+      console.log(e);
     }
   }, [setIsMyAccount, user.name]);
 

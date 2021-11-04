@@ -56,7 +56,7 @@ const UserList = (): JSX.Element => {
                 id={user.weeklyTopGithubUser.githubId}
               />
             );
-          }, []);
+          });
       }
     }
   };

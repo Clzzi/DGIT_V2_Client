@@ -36,13 +36,14 @@ export const SubTitle = styled.div<{ showing: boolean }>`
   width: 100%;
   text-align: start;
   color: ${(props) => props.theme.modalSubTitle};
-  visibility: ${(props) => (props.showing ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.showing ? 1 : 0)};
   font-size: ${FontConfig.font18};
+  transition: 0.2s ease-in-out;
 `;
 
 export const Input = styled.input`
   width: 100%;
-  color: ${(prosp) => prosp.theme.modalContent};
+  color: ${(props) => props.theme.modalContent};
   font-size: ${FontConfig.font24};
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.modalBorder};
@@ -55,11 +56,12 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.div`
+export const Button = styled.div<{ showing: boolean }>`
   width: 72px;
   height: 40px;
   font-size: ${FontConfig.font18};
-  color: ${(props) => props.theme.modalContent};
+  color: ${(props) =>
+    props.showing ? props.theme.modalContent : props.theme.modalBorder};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,4 +70,6 @@ export const Button = styled.div`
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
   background-color: ${(props) => props.theme.background};
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+  font-weight: bold;
 `;
