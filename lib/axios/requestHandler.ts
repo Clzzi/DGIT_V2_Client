@@ -7,6 +7,7 @@ import Token from 'lib/token';
 import { AxiosRequestConfig } from 'axios';
 import { IRefreshToken } from 'types/auth.type';
 import { getRefreshToken } from 'lib/api/auth/auth.api';
+import { getBearer } from 'util/getBearer';
 
 const requestHandler = async (
   config: AxiosRequestConfig,
@@ -25,7 +26,7 @@ const requestHandler = async (
       Token.setToken(ACCESS_TOKEN_KEY, data.data);
       accessToken = data.data;
     }
-    config.headers![TOKEN_HEADER_KEY] = `Bearer ${accessToken}`;
+    config.headers![TOKEN_HEADER_KEY] = getBearer(accessToken);
   }
 
   return config;

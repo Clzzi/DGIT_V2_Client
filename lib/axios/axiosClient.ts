@@ -7,12 +7,13 @@ import Token from 'lib/token';
 import CONFIG from 'config/config.json';
 import axios, { AxiosInstance } from 'axios';
 import requestHandler from './requestHandler';
+import { getBearer } from 'util/getBearer';
 
 const axiosClient: AxiosInstance = axios.create({
   baseURL: CONFIG.SERVER,
   headers: {
     [ALLOWCORS_KEY]: '*',
-    [TOKEN_HEADER_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY)}`,
+    [TOKEN_HEADER_KEY]: getBearer(Token.getToken(ACCESS_TOKEN_KEY)!),
   },
 });
 
