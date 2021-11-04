@@ -3,17 +3,18 @@ import useProperty from 'hooks/property/useProperty';
 
 const PropertyBar = (): JSX.Element => {
   const { propertyList } = useProperty();
+
+  const Property: JSX.Element[] = propertyList.map(
+    (property: string, index: number) => (
+      <S.Property key={index} number={index}>
+        {property}
+      </S.Property>
+    ),
+  );
+
   return (
     <S.PropertyBar>
-      <S.PropertyBarContent>
-        {propertyList.map((property: string, index: number) => {
-          return (
-            <S.Property key={index} number={index}>
-              {property}
-            </S.Property>
-          );
-        })}
-      </S.PropertyBarContent>
+      <S.PropertyBarContent>{Property}</S.PropertyBarContent>
     </S.PropertyBar>
   );
 };
