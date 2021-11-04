@@ -1,4 +1,5 @@
 import Token from 'lib/token';
+import Head from 'next/head';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
@@ -13,6 +14,9 @@ const AccountButton = dynamic(() => import('components/AccountButton'));
 const Home: NextPage = () => {
   return (
     <div>
+      <Head>
+        <title>{'DGIT'}</title>
+      </Head>
       <Header />
       <Banner />
       <Nav />
