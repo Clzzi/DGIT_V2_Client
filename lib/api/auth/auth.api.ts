@@ -1,11 +1,11 @@
 import {
-  ILoginResponse,
-  IRefreshTokenResponse,
   loginDto,
+  ILoginResponse,
   refreshTokenDto,
+  IRefreshTokenResponse,
 } from './auth.dto';
-import CONFIG from 'config/config.json';
 import axios from 'axios';
+import CONFIG from 'config/config.json';
 
 export const getRefreshToken = async (
   dto: refreshTokenDto,

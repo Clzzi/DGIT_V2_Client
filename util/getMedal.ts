@@ -1,8 +1,10 @@
-export const getMedal = (rank: number): string | null => {
-  const GOLDMEDAL_URL = '/static/GoldMedal.svg';
-  const SILVERMEDAL_URL = '/static/SilverMedal.svg';
-  const BRONZEMEDAL_URL = '/static/BronzeMedal.svg';
+import {
+  BRONZEMEDAL_URL,
+  GOLDMEDAL_URL,
+  SILVERMEDAL_URL,
+} from 'constants/medal.constants';
 
+export const getMedal = (rank: number): string | null => {
   switch (rank) {
     case 1:
       return GOLDMEDAL_URL;

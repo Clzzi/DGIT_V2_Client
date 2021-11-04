@@ -26,12 +26,12 @@ export const weekTopUserState = atom<IWeekTopList[]>({
   default: [] as IWeekTopList[],
 });
 
-export const isMyAccountState = atom<boolean>({
-  key: 'isMyAccountState',
-  default: false as boolean,
-});
-
 export const userIdState = atom<string[]>({
   key: 'userIdState',
   default: [] as string[],
+});
+
+export const isMyAccountState = atom<boolean>({
+  key: 'isMyAccountState',
+  default: false as boolean,
 });

@@ -1,12 +1,13 @@
-import jwt, { JwtPayload } from 'jsonwebtoken';
 import local from 'util/local';
+import jwt, { JwtPayload } from 'jsonwebtoken';
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from 'constants/token.constants';
 
 class Token {
   public static getToken(key: string): string | null {
     return local.get(key);
   }
 
-  public static decodeToken(key: string) {
+  public static decodeToken(key: string): JwtPayload {
     return jwt.decode(this.getToken(key)!) as JwtPayload;
   }
 
@@ -15,8 +16,8 @@ class Token {
   }
 
   public static removeToken(): void {
-    local.remove('access_token');
-    local.remove('refresh_token');
+    local.remove(ACCESS_TOKEN_KEY);
+    local.remove(REFRESH_TOKEN_KEY);
   }
 }
 

@@ -1,5 +1,3 @@
-import axiosClient from 'lib/axios/axiosClient';
-import { IResponse } from 'types/response.type';
 import {
   IGetUserInfoResponse,
   ITotalUserRankResponse,
@@ -7,6 +5,8 @@ import {
   IWeekUserRankResponse,
   setGithubIdDto,
 } from './user.dto';
+import axiosClient from 'lib/axios/axiosClient';
+import { IResponse } from 'types/response.type';
 
 export const getTotalUserRank = async (): Promise<ITotalUserRankResponse> => {
   const url: string = '/total';
