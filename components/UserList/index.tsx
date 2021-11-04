@@ -1,9 +1,11 @@
-import UserItem from 'components/UserItem';
 import useNav from 'hooks/nav/useNav';
 import useTotalUser from 'hooks/totalUser/useTotalUser';
 import useWeekTop from 'hooks/weekTop/useWeekTop';
 import useWeekUser from 'hooks/weekUser/useWeekUser';
+import dynamic from 'next/dynamic';
 import * as S from './styles';
+
+const UserItem = dynamic(() => import('components/UserItem'));
 
 const UserList = (): JSX.Element => {
   const [nav] = useNav();

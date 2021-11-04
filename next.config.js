@@ -8,5 +8,6 @@ module.exports = {
 
     return config;
   },
+  optimizeFonts: true,
   reactStrictMode: true,
 };
