@@ -5,7 +5,6 @@ import Button from 'components/common/Button';
 import { useEffect, useState } from 'react';
 import Modal from 'components/common/Modal';
 import Help from 'components/Help';
-import CONFIG from 'config/config.json';
 import { useRouter } from 'next/router';
 import Token from 'lib/token';
 import useLogin from 'hooks/login/useLogin';
@@ -41,7 +40,7 @@ const Header = (): JSX.Element => {
         fontColor={theme.background}
         backgroundColor={theme.mainContent}
         click={() => {
-          router.push(CONFIG.DAUTH_URL);
+          router.push(process.env.NEXT_PUBLIC_DAUTH_URL as string);
         }}
       />
     );
