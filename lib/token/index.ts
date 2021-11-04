@@ -1,6 +1,6 @@
 import local from 'util/local';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from 'constants/token.constants';
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from 'constants/auth.constants';
 
 class Token {
   public static getToken(key: string): string | null {

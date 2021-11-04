@@ -2,7 +2,7 @@ import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
   TOKEN_HEADER_KEY,
-} from 'constants/token.constants';
+} from 'constants/auth.constants';
 import Token from 'lib/token';
 import { AxiosRequestConfig } from 'axios';
 import { IRefreshToken } from 'types/auth.type';

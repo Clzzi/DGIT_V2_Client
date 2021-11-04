@@ -5,7 +5,7 @@ import { ITotalUser, IUser } from 'types/user.type';
 import { useCallback, useEffect } from 'react';
 import { getTotalUserRank, getUserInfo } from 'lib/api/user/user.api';
 import { isMyAccountState, userIdState, userState } from 'store/user';
-import { ACCESS_TOKEN_KEY } from 'constants/token.constants';
+import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
 
 const useHeader = () => {
   const [userId, setUserId] = useRecoilState<string[]>(userIdState);

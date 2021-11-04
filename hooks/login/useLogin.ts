@@ -1,4 +1,4 @@
-import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from 'constants/token.constants';
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from 'constants/auth.constants';
 import { handleLogin } from 'lib/api/auth/auth.api';
 import { loginDto } from 'lib/api/auth/auth.dto';
 import Toast from 'lib/toast';

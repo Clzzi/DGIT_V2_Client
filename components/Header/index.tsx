@@ -9,6 +9,7 @@ import CONFIG from 'config/config.json';
 import { useRouter } from 'next/router';
 import Token from 'lib/token';
 import useLogin from 'hooks/login/useLogin';
+import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
 
 const Header = (): JSX.Element => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const Header = (): JSX.Element => {
   }, [login, router]);
 
   const SignButton = () =>
-    Token.getToken('access_token') ? (
+    Token.getToken(ACCESS_TOKEN_KEY) ? (
       <Button
         message="로그아웃"
         fontColor={theme.background}

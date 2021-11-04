@@ -1,13 +1,18 @@
-import axios, { AxiosInstance } from 'axios';
-import CONFIG from 'config/config.json';
+import {
+  ACCESS_TOKEN_KEY,
+  ALLOWCORS_KEY,
+  TOKEN_HEADER_KEY,
+} from 'constants/auth.constants';
 import Token from 'lib/token';
+import CONFIG from 'config/config.json';
+import axios, { AxiosInstance } from 'axios';
 import requestHandler from './requestHandler';
 
 const axiosClient: AxiosInstance = axios.create({
   baseURL: CONFIG.SERVER,
   headers: {
-    'Access-Control-Allow-Origin': '*',
-    Authorization: `Bearer ${Token.getToken('access_token')}`,
+    [ALLOWCORS_KEY]: '*',
+    [TOKEN_HEADER_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY)}`,
   },
 });
 

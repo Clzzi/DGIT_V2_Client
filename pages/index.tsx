@@ -4,6 +4,7 @@ import Header from 'components/Header';
 import Nav from 'components/Nav';
 import PropertyBar from 'components/PropertyBar';
 import UserList from 'components/UserList';
+import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
 import Token from 'lib/token';
 import type { NextPage } from 'next';
 
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
       <Nav />
       <PropertyBar />
       <UserList />
-      {Token.getToken('access_token') && <AccountButton />}
+      {Token.getToken(ACCESS_TOKEN_KEY) && <AccountButton />}
     </div>
   );
 };
