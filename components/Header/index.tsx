@@ -12,9 +12,9 @@ import useLogin from 'hooks/login/useLogin';
 
 const Header = (): JSX.Element => {
   const router = useRouter();
+  const { login } = useLogin();
   const theme = useTheme();
   const [isHelpModal, setIsHelpModal] = useState<boolean>(false);
-  const { login } = useLogin();
 
   useEffect(() => {
     const { code } = router.query;
