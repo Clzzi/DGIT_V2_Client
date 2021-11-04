@@ -1,3 +1,4 @@
+import { getGithubURL } from 'util/getGithubURL';
 import * as S from './styles';
 
 const Help = (): JSX.Element => {
@@ -19,7 +20,7 @@ const Help = (): JSX.Element => {
         <li>
           사용자 정보 수정 및 삭제는{' '}
           <a
-            href="https://github.com/Clzzi/DGIT_V2_Client"
+            href={getGithubURL('Clzzi/DGIT_V2_Client')}
             target="_blank"
             rel="noreferrer">
             제작자
@@ -29,7 +30,7 @@ const Help = (): JSX.Element => {
         <li>
           자세한 사항은{' '}
           <a
-            href="https://github.com/Clzzi/DGIT_V2_Client"
+            href={getGithubURL('Clzzi/DGIT_V2_Client')}
             target="_blank"
             rel="noreferrer">
             이곳

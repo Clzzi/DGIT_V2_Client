@@ -13,9 +13,10 @@ const UserItem = ({
   rank,
   keep,
 }: IUserItem): JSX.Element => {
-  const UserKeepComment = () => {
-    return <S.UserKeep>{keep}일 유지중 🔥</S.UserKeep>;
-  };
+  const UserKeepComment: JSX.Element = (
+    <S.UserKeep>{keep}일 유지중 🔥</S.UserKeep>
+  );
+
   return (
     <a href={getGithubURL(id)} target="_blank" rel="noreferrer">
       <S.UserItem>
@@ -31,7 +32,7 @@ const UserItem = ({
           />
         </S.UserProfile>
         <S.UserName medal={getMedal(Number(rank))}>{name}</S.UserName>
-        {keep! >= 0 && <UserKeepComment />}
+        {keep! >= 0 && UserKeepComment}
         <S.UserId>{id}</S.UserId>
         <S.UserCommit>{commit}</S.UserCommit>
         <S.UserIntro>{intro}</S.UserIntro>
