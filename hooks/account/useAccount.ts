@@ -1,9 +1,9 @@
-import useHeader from 'hooks/header/useHeader';
-import useTotalUser from 'hooks/totalUser/useTotalUser';
-import useWeekTop from 'hooks/weekTop/useWeekTop';
-import useWeekUser from 'hooks/weekUser/useWeekUser';
-import { setGithubId } from 'lib/api/user/user.api';
 import Toast from 'lib/toast';
+import { setGithubId } from 'lib/api/user/user.api';
+import useHeader from 'hooks/header/useHeader';
+import useWeekTop from 'hooks/weekTop/useWeekTop';
+import useTotalUser from 'hooks/totalUser/useTotalUser';
+import useWeekUser from 'hooks/weekUser/useWeekUser';
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 
 const useAccount = (): [

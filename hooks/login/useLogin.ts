@@ -1,3 +1,4 @@
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from 'constants/token.constants';
 import { handleLogin } from 'lib/api/auth/auth.api';
 import { loginDto } from 'lib/api/auth/auth.dto';
 import Toast from 'lib/toast';
@@ -15,8 +16,8 @@ const useLogin = () => {
       };
       try {
         const { data } = await handleLogin(dto);
-        Token.setToken('access_token', data.token);
-        Token.setToken('refresh_token', data.refreshToken);
+        Token.setToken(ACCESS_TOKEN_KEY, data.token);
+        Token.setToken(REFRESH_TOKEN_KEY, data.refreshToken);
         router.push('/');
         Toast.successToast('로그인 되었습니다');
       } catch (e: any) {

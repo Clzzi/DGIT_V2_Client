@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
 import { navState } from 'store/nav';
+import { useRecoilValue } from 'recoil';
 import { TNav, TProperty } from 'types/common.type';
+import { useCallback, useEffect, useState } from 'react';
 
 const useProperty = () => {
   const nav = useRecoilValue<TNav>(navState);

@@ -1,10 +1,11 @@
-import { getTotalUserRank, getUserInfo } from 'lib/api/user/user.api';
 import Toast from 'lib/toast';
 import Token from 'lib/token';
-import { useCallback, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
+import { ITotalUser, IUser } from 'types/user.type';
+import { useCallback, useEffect } from 'react';
+import { getTotalUserRank, getUserInfo } from 'lib/api/user/user.api';
 import { isMyAccountState, userIdState, userState } from 'store/user';
-import { IUser } from 'types/user.type';
+import { ACCESS_TOKEN_KEY } from 'constants/token.constants';
 
 const useHeader = () => {
   const [userId, setUserId] = useRecoilState<string[]>(userIdState);
@@ -21,25 +22,41 @@ const useHeader = () => {
     }
   }, [setUser]);
 
+  const checkMyAccount = useCallback(
+    (name: string) => {
+      if (name === user.name) {
+        setIsMyAccount(true);
+      }
+    },
+    [setIsMyAccount, user.name],
+  );
+
+  const getUserIdList = useCallback(
+    (userList: ITotalUser[]) => {
+      let idArray: string[] = [];
+
+      userList.forEach((user) => {
+        idArray.push(user.user.name);
+        checkMyAccount(user.user.name);
+      });
+
+      return idArray;
+    },
+    [checkMyAccount],
+  );
+
   const handleGetList = useCallback(async () => {
     try {
       const { data } = await getTotalUserRank();
-      let userIdArray: string[] = [];
-      data.users.forEach((v) => {
-        userIdArray.push(v.githubId);
-        if (v.user.name === user.name) {
-          setIsMyAccount(true);
-          return;
-        }
-      });
-      setUserId(userIdArray);
+      const idArray = getUserIdList(data.users);
+      setUserId(idArray);
     } catch (e: any) {
       Toast.errorToast(e.response.data.message);
     }
-  }, [setIsMyAccount, user.name, setUserId]);
+  }, [setUserId, getUserIdList]);
 
   useEffect(() => {
-    if (Token.getToken('access_token')) {
+    if (Token.getToken(ACCESS_TOKEN_KEY)) {
       handleGetUserInfo();
       handleGetList();
     }
