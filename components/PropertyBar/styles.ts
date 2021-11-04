@@ -30,4 +30,5 @@ export const Property = styled.div<{ number: number }>`
   justify-content: center;
   align-items: center;
   text-align: center;
+  transition: 0.2s ease-in-out;
 `;

@@ -22,7 +22,7 @@ const Help = (): JSX.Element => {
             href="https://github.com/Clzzi/DGIT_V2_Client"
             target="_blank"
             rel="noreferrer">
-            제작자(배포)
+            제작자
           </a>
           로 요청해주십시오.
         </li>

@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
 
 export const UserItem = styled.div`
   position: relative;
@@ -16,6 +26,7 @@ export const UserItem = styled.div`
   font-size: ${FontConfig.font18};
   cursor: pointer;
   transition: 0.1s ease-in-out;
+  animation: ${fadeIn} 0.2s ease-in-out;
   &:hover {
     background-color: ${(props) => props.theme.navFilterBackground};
   }
