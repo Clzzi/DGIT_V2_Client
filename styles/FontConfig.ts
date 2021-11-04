@@ -1,8 +1,5 @@
 import { IFontConfig } from 'types/theme.type';
-
-const getRem = (value: number): string => {
-  return `${value / 16}rem`;
-};
+import { getRem } from 'util/getRem';
 
 export const FontConfig: IFontConfig = {
   font16: getRem(16),
