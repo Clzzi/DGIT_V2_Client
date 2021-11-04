@@ -1,12 +1,14 @@
-import AccountButton from 'components/AccountButton';
-import Banner from 'components/Banner';
-import Header from 'components/Header';
-import Nav from 'components/Nav';
-import PropertyBar from 'components/PropertyBar';
-import UserList from 'components/UserList';
-import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
 import Token from 'lib/token';
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
+
+const Header = dynamic(() => import('components/Header'));
+const Banner = dynamic(() => import('components/Banner'));
+const Nav = dynamic(() => import('components/Nav'));
+const PropertyBar = dynamic(() => import('components/PropertyBar'));
+const UserList = dynamic(() => import('components/UserList'));
+const AccountButton = dynamic(() => import('components/AccountButton'));
 
 const Home: NextPage = () => {
   return (

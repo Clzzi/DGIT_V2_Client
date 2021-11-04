@@ -7,8 +7,8 @@ import Account from 'components/Account';
 import useHeader from 'hooks/header/useHeader';
 
 const AccountButton = (): JSX.Element => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { isMyAccount } = useHeader();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
