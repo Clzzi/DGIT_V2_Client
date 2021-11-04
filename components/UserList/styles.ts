@@ -14,4 +14,7 @@ export const UserListContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  &:last-child {
+    margin-bottom: 100px;
+  }
 `;

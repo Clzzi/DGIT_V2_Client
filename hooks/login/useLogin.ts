@@ -18,6 +18,7 @@ const useLogin = () => {
         Token.setToken('access_token', data.token);
         Token.setToken('refresh_token', data.refreshToken);
         router.push('/');
+        Toast.successToast('로그인 되었습니다');
       } catch (e: any) {
         Toast.errorToast(e.response.data.message);
       }

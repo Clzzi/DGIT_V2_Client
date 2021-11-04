@@ -38,6 +38,7 @@ const useAccount = (): [
         await handleGetWeekTopUser();
         await handleGetList();
         set(false);
+        Toast.successToast('계정이 추가되었습니다');
       } catch (e: any) {
         Toast.errorToast(e.response.data.message);
       }
