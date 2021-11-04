@@ -1,8 +1,10 @@
 import axiosClient from 'lib/axios/axiosClient';
+import { IResponse } from 'types/response.type';
 import {
   IGetUserInfoResponse,
   ITotalUserRankResponse,
   IWeekUserRankResponse,
+  setGithubIdDto,
 } from './user.dto';
 
 export const getTotalUserRank = async (): Promise<ITotalUserRankResponse> => {
@@ -26,5 +28,11 @@ export const getWeekUserRank = async (): Promise<IWeekUserRankResponse> => {
 export const getUserInfo = async (): Promise<IGetUserInfoResponse> => {
   const url: string = '/user/my';
   const { data } = await axiosClient.get<IGetUserInfoResponse>(url);
+  return data;
+};
+
+export const setGithubId = async (dto: setGithubIdDto): Promise<IResponse> => {
+  const url: string = '/user/github';
+  const { data } = await axiosClient.put<IResponse>(url, dto);
   return data;
 };

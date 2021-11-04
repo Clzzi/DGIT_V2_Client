@@ -16,3 +16,7 @@ export interface IGetUserInfoResponse extends Response {
 // export interface IWeekTopUserListResponse extends IResponse {
 //   data:
 // }
+
+export interface setGithubIdDto {
+  githubId: string;
+}
