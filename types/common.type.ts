@@ -9,6 +9,16 @@ export interface IButton {
   click?: () => void | Promise<void>;
 }
 
+export interface IUserItem {
+  rank: string;
+  image: string;
+  name: string;
+  commit: number;
+  intro: string;
+  id: string;
+  keep?: number;
+}
+
 export interface IModal {
   children: React.ReactNode;
   width?: string;

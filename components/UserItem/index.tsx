@@ -1,7 +1,7 @@
 import * as S from './styles';
-import { IUserItem } from 'types/user.type';
 import Image from 'next/image';
 import { getMedal } from 'util/getMedal';
+import { IUserItem } from 'types/common.type';
 
 const UserItem = ({
   image,

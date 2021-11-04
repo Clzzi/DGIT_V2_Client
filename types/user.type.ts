@@ -22,16 +22,6 @@ export interface IUser {
   name: string;
 }
 
-export interface IUserItem {
-  rank: string;
-  image: string;
-  name: string;
-  commit: number;
-  intro: string;
-  id: string;
-  keep?: number;
-}
-
 export interface IWeekTopList {
   idx: number;
   date: string;
