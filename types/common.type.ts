@@ -16,6 +16,11 @@ export interface IModal {
   set: Dispatch<SetStateAction<boolean>>;
 }
 
+export interface IAccount {
+  isEdit: boolean;
+  set: Dispatch<SetStateAction<boolean>>;
+}
+
 export type TNav = '종합' | '주간' | '주간기록';
 
 export type TProperty =

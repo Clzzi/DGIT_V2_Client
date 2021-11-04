@@ -1,8 +1,9 @@
 import React from 'react';
 import * as S from './styles';
 import useAccount from 'hooks/account/useAccount';
+import { IAccount } from 'types/common.type';
 
-const Account = ({ isEdit }: { isEdit: boolean }): JSX.Element => {
+const Account = ({ isEdit, set }: IAccount): JSX.Element => {
   const [input, setInput, handleGithubId] = useAccount();
   return (
     <S.Account>
@@ -19,7 +20,9 @@ const Account = ({ isEdit }: { isEdit: boolean }): JSX.Element => {
           }
         />
       </S.Content>
-      <S.Button onClick={handleGithubId} showing={input ? true : false}>
+      <S.Button
+        onClick={() => handleGithubId(set)}
+        showing={input ? true : false}>
         {isEdit ? '수정 ' : '신청'}
       </S.Button>
     </S.Account>

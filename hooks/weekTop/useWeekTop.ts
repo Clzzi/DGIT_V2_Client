@@ -21,7 +21,7 @@ const useWeekTop = () => {
     handleGetWeekTopUser();
   }, [handleGetWeekTopUser]);
 
-  return { weekTopUser };
+  return { weekTopUser, handleGetWeekTopUser };
 };
 
 export default useWeekTop;

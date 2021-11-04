@@ -17,7 +17,7 @@ const useWeekUser = () => {
     getWeekUserList();
   }, [getWeekUserList]);
 
-  return { weekUser };
+  return { weekUser, getWeekUserList };
 };
 
 export default useWeekUser;

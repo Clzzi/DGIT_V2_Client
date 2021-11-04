@@ -23,6 +23,7 @@ const useTotalUser = () => {
 
   return {
     totalUser,
+    getTotalUser,
   };
 };
 

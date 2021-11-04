@@ -17,7 +17,7 @@ const AccountButton = (): JSX.Element => {
       </S.AccountButton>
       {isOpen && (
         <Modal set={setIsOpen}>
-          <Account isEdit={isMyAccount} />
+          <Account isEdit={isMyAccount} set={setIsOpen} />
         </Modal>
       )}
     </>
