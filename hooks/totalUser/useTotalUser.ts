@@ -3,6 +3,7 @@ import { totalUserState } from 'store/user';
 import { useRecoilState } from 'recoil';
 import { ITotalUserRank } from 'types/user.type';
 import { getTotalUserRank } from 'lib/api/user/user.api';
+import Toast from 'lib/toast';
 
 const useTotalUser = () => {
   const [totalUser, setTotalUser] =
@@ -13,7 +14,7 @@ const useTotalUser = () => {
       const { data } = await getTotalUserRank();
       setTotalUser(data);
     } catch (e: any) {
-      console.log(e);
+      Toast.errorToast(e.response.data.message);
     }
   }, [setTotalUser]);
 

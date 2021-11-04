@@ -3,6 +3,7 @@ import useTotalUser from 'hooks/totalUser/useTotalUser';
 import useWeekTop from 'hooks/weekTop/useWeekTop';
 import useWeekUser from 'hooks/weekUser/useWeekUser';
 import { setGithubId } from 'lib/api/user/user.api';
+import Toast from 'lib/toast';
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 
 const useAccount = (): [
@@ -19,9 +20,11 @@ const useAccount = (): [
   const handleGithubId = useCallback(
     async (set: Dispatch<SetStateAction<boolean>>) => {
       if (input.length <= 0) {
+        Toast.errorToast('ID를 입력해주세요');
         return;
       }
       if (userId.indexOf(input) >= 0) {
+        Toast.errorToast('등록된 아이디입니다. 관리자에게 문의해주세요');
         setInput('');
         return;
       }
@@ -36,7 +39,7 @@ const useAccount = (): [
         await handleGetList();
         set(false);
       } catch (e: any) {
-        console.log(e);
+        Toast.errorToast(e.response.data.message);
       }
     },
     [

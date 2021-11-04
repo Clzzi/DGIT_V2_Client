@@ -1,4 +1,5 @@
 import { getWeekTopUserList } from 'lib/api/user/user.api';
+import Toast from 'lib/toast';
 import { useCallback, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { weekTopUserState } from 'store/user';
@@ -13,7 +14,7 @@ const useWeekTop = () => {
       const { data } = await getWeekTopUserList();
       setWeekTopUser(data);
     } catch (e: any) {
-      console.log(e);
+      Toast.errorToast(e.response.data.message);
     }
   }, [setWeekTopUser]);
 

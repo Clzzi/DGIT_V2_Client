@@ -1,5 +1,6 @@
 import { handleLogin } from 'lib/api/auth/auth.api';
 import { loginDto } from 'lib/api/auth/auth.dto';
+import Toast from 'lib/toast';
 import Token from 'lib/token';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
@@ -18,7 +19,7 @@ const useLogin = () => {
         Token.setToken('refresh_token', data.refreshToken);
         router.push('/');
       } catch (e: any) {
-        console.log(e);
+        Toast.errorToast(e.response.data.message);
       }
     },
     [router],

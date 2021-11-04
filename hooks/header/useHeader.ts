@@ -1,4 +1,5 @@
 import { getTotalUserRank, getUserInfo } from 'lib/api/user/user.api';
+import Toast from 'lib/toast';
 import Token from 'lib/token';
 import { useCallback, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
@@ -16,7 +17,7 @@ const useHeader = () => {
       const { data } = await getUserInfo();
       setUser(data);
     } catch (e: any) {
-      console.log(e);
+      Toast.errorToast(e.response.data.message);
     }
   }, [setUser]);
 
@@ -33,7 +34,7 @@ const useHeader = () => {
       });
       setUserId(userIdArray);
     } catch (e: any) {
-      console.log(e);
+      Toast.errorToast(e.response.data.message);
     }
   }, [setIsMyAccount, user.name, setUserId]);
 
