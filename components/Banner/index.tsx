@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import * as S from './styles';
-import BannerImg from 'public/static/Banner.jpg';
+import BannerImg from 'public/static/Banner.png';
 
 const Banner = (): JSX.Element => {
   return (
