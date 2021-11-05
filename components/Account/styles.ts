@@ -14,6 +14,7 @@ export const Account = styled.div`
 export const Title = styled.div`
   width: 100%;
   display: flex;
+  user-select: none;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -43,6 +44,7 @@ export const SubTitle = styled.div<{ showing: boolean }>`
 
 export const Input = styled.input`
   width: 100%;
+  user-select: none;
   color: ${(props) => props.theme.modalContent};
   font-size: ${FontConfig.font24};
   border: none;
@@ -72,4 +74,5 @@ export const Button = styled.div<{ showing: boolean }>`
   cursor: pointer;
   transition: 0.2s ease-in-out;
   font-weight: bold;
+  user-select: none;
 `;

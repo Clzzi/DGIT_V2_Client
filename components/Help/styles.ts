@@ -9,6 +9,7 @@ export const Help = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: start;
+  user-select: none;
 `;
 
 export const HelpTitle = styled.div`

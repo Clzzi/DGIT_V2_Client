@@ -15,6 +15,7 @@ export const UserItem = styled.div`
   position: relative;
   width: 1410px;
   height: 130px;
+  user-select: none;
   display: flex;
   flex-direction: row;
   justify-content: start;

@@ -31,4 +31,5 @@ export const Property = styled.div<{ number: number }>`
   align-items: center;
   text-align: center;
   transition: 0.2s ease-in-out;
+  user-select: none;
 `;
