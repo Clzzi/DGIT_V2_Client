@@ -26,14 +26,14 @@ const Help = (): JSX.Element => {
           로 요청해주십시오.
         </li>
         <li>
-          이슈 또는 개선사항은{' '}
+          에러 또는 개선사항은{' '}
           <a
             href={getGithubURL('Clzzi/DGIT_V2_Client/issues')}
             target="_blank"
             rel="noreferrer">
-            이곳
+            이슈
           </a>
-          을 참고해주십시오.
+          를 남겨주세요!
         </li>
         <li>
           자세한 사항은{' '}
