@@ -1,3 +1,4 @@
+import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
 
@@ -6,19 +7,16 @@ export const FilterWrapper = styled.div`
 `;
 
 export const Filter = styled.div`
+  ${M.selectNone};
+  ${M.apperanceNone};
   width: 124px;
   height: 40px;
   border-radius: 8px;
-  -o-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   cursor: pointer;
   visibility: hidden;
   &::-ms-expand {
     display: none;
   }
-  user-select: none;
   border: none;
   background-color: ${(props) => props.theme.navFilterBackground};
   font-size: ${FontConfig.font16};

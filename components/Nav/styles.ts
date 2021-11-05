@@ -1,3 +1,4 @@
+import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
 
@@ -31,14 +32,14 @@ export const NavButtonWrap = styled.div`
 `;
 
 export const NavButton = styled.div<{ showing: boolean }>`
+  ${M.selectNone};
   width: fit-content;
   height: 33px;
   cursor: pointer;
-  user-select: none;
+  transition: 0.2s ease-in-out;
   border-bottom: 2px solid
     ${(props) =>
       props.showing ? props.theme.navTitle : props.theme.background};
-  transition: 0.2s ease-in-out;
   & > div {
     transition: 0.2s ease-in-out;
     font-size: ${FontConfig.font18};

@@ -21,6 +21,13 @@ export const imgDragNone = css`
   -webkit-user-drag: none;
 `;
 
+export const apperanceNone = css`
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+`;
+
 export const fadeIn = keyframes`
   from {
     opacity: 0;

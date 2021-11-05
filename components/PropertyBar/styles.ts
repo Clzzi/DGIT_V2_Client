@@ -1,3 +1,4 @@
+import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { getPropertyWidth } from 'util/getPropertyWidth';
 
@@ -23,6 +24,7 @@ export const PropertyBarContent = styled.div`
 `;
 
 export const Property = styled.div<{ number: number }>`
+  ${M.selectNone};
   height: 100%;
   width: ${(props) => getPropertyWidth(props.number)};
   color: ${(props) => props.theme.mainProperty};
@@ -31,5 +33,4 @@ export const Property = styled.div<{ number: number }>`
   align-items: center;
   text-align: center;
   transition: 0.2s ease-in-out;
-  user-select: none;
 `;

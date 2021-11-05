@@ -1,3 +1,4 @@
+import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
 
@@ -12,9 +13,9 @@ export const Account = styled.div`
 `;
 
 export const Title = styled.div`
+  ${M.selectNone};
   width: 100%;
   display: flex;
-  user-select: none;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -34,6 +35,7 @@ export const Content = styled.div`
 `;
 
 export const SubTitle = styled.div<{ showing: boolean }>`
+  ${M.selectNone};
   width: 100%;
   text-align: start;
   color: ${(props) => props.theme.modalSubTitle};
@@ -43,8 +45,8 @@ export const SubTitle = styled.div<{ showing: boolean }>`
 `;
 
 export const Input = styled.input`
+  ${M.selectNone};
   width: 100%;
-  user-select: none;
   color: ${(props) => props.theme.modalContent};
   font-size: ${FontConfig.font24};
   border: none;
@@ -59,6 +61,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.div<{ showing: boolean }>`
+  ${M.selectNone};
   width: 72px;
   height: 40px;
   font-size: ${FontConfig.font18};
@@ -74,5 +77,4 @@ export const Button = styled.div<{ showing: boolean }>`
   cursor: pointer;
   transition: 0.2s ease-in-out;
   font-weight: bold;
-  user-select: none;
 `;

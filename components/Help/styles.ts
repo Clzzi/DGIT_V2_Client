@@ -1,7 +1,9 @@
+import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
 
 export const Help = styled.div`
+  ${M.selectNone};
   width: 860px;
   height: 508px;
   display: flex;
@@ -9,7 +11,6 @@ export const Help = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: start;
-  user-select: none;
 `;
 
 export const HelpTitle = styled.div`
@@ -37,6 +38,6 @@ export const HelpContent = styled.ol`
     color: ${(props) => props.theme.modalIntro};
     font-weight: 400;
     word-break: keep-all;
-    list-style: decimal !important;
+    list-style: decimal;
   }
 `;
