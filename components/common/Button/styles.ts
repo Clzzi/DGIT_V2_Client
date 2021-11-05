@@ -1,7 +1,9 @@
+import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { IButton } from 'types/common.type';
 
 export const Button = styled.div<Omit<IButton, 'click' | 'message'>>`
+  ${M.selectNone};
   width: 74px;
   height: 32px;
   color: ${(props) => props.fontColor};
@@ -12,6 +14,5 @@ export const Button = styled.div<Omit<IButton, 'click' | 'message'>>`
   justify-content: center;
   align-items: center;
   text-align: center;
-  user-select: none;
   cursor: pointer;
 `;

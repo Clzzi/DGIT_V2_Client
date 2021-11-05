@@ -1,33 +1,24 @@
-import styled, { keyframes } from 'styled-components';
+import * as M from 'styles/moduleStyle';
+import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-`;
-
 export const UserItem = styled.div`
+  ${M.selectNone};
   position: relative;
   width: 1410px;
   height: 130px;
-  user-select: none;
   display: flex;
-  flex-direction: row;
-  justify-content: start;
   align-items: center;
   text-align: center;
+  justify-content: start;
+  flex-direction: row;
   background-color: ${(props) => props.theme.background};
   border-bottom: 1px solid ${(props) => props.theme.mainBorder};
   color: ${(props) => props.theme.mainContent};
   font-size: ${FontConfig.font18};
   cursor: pointer;
   transition: 0.1s ease-in-out;
-  animation: ${fadeIn} 0.2s ease-in-out;
+  animation: ${M.fadeIn} 0.2s ease-in-out;
   &:hover {
     background-color: ${(props) => props.theme.navFilterBackground};
   }
@@ -44,13 +35,15 @@ export const UserRank = styled.div<{ rank: number }>`
 `;
 
 export const UserProfile = styled.div`
+  ${M.dragNone};
   width: 91px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   border-radius: 50%;
-  & > span {
+  & > span > img {
+    ${M.imgDragNone};
     width: 70px;
     height: 70px;
     border-radius: 50%;
