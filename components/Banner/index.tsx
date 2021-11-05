@@ -2,10 +2,15 @@ import Image from 'next/image';
 import BannerImage from 'assets/Banner.png';
 import * as S from './styles';
 
-const Banner = (): JSX.Element => {
+const Banner = ({ prefix }: { prefix: string }): JSX.Element => {
   return (
     <S.BannerWrap>
-      <Image src={BannerImage.src} alt="Banner" width={1410} height={170} />
+      <Image
+        src={`${prefix}${BannerImage.src}`}
+        alt="Banner"
+        width={1410}
+        height={170}
+      />
     </S.BannerWrap>
   );
 };

@@ -12,13 +12,15 @@ const UserList = dynamic(() => import('components/UserList'));
 const AccountButton = dynamic(() => import('components/AccountButton'));
 
 const Home: NextPage = () => {
+  const prefix =
+    process.env.NODE_ENV === 'production' ? 'http://dgit.b1nd.com' : '';
   return (
     <div>
       <Head>
         <title>{'DGIT'}</title>
       </Head>
       <Header />
-      <Banner />
+      <Banner prefix={prefix} />
       <Nav />
       <PropertyBar />
       <UserList />
