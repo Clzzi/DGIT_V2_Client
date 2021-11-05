@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "predeploy": "next build && next export && echo dgit.b1nd.com > out/CNAME",
+    "predeploy": "next build && next export && echo dgit.b1nd.com>out/CNAME",
     "deploy": "gh-pages -d out",
     "lint": "next lint"
   },

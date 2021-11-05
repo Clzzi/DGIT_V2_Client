@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           content="DGIT은 대구소프트웨어마이스터고 학생들의 개발 문화 개선을 위해 제작한 사이트입니다."
         />
         <meta property="og:title" content="DGIT" />
-        <meta property="og:url" content="https://dgit.b1nd.com" />
+        <meta property="og:url" content="http://dgit.b1nd.com" />
         <meta
           property="og:description"
           content="DGIT은 대구소프트웨어마이스터고 학생들의 개발 문화 개선을 위해 제작한 사이트입니다."
