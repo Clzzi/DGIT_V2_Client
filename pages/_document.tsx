@@ -45,16 +45,12 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
             rel="stylesheet"
           />
-          <meta
-            name="description"
-            content="DGIT은 대구소프트웨어마이스터고 학생들의 개발 문화 개선을 위해 제작한 사이트입니다."
-          />
           <meta charSet="utf-8" />
-          <meta property="og:title" content="DGIT" />
-          <meta property="og:url" content="https://dgit.b1nd.com" />
-          <meta
-            property="og:description"
-            content="DGIT은 대구소프트웨어마이스터고 학생들의 개발 문화 개선을 위해 제작한 사이트입니다."
+          <link
+            rel="search"
+            href="/opensearch.xml"
+            type="application/opensearchdescription+xml"
+            title="DGIT"
           />
         </Head>
         <body>
