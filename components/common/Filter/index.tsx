@@ -6,7 +6,6 @@ import React, {
   useState,
 } from 'react';
 import * as S from './styles';
-import Image from 'next/image';
 import useFilter from 'hooks/filter/useFilter';
 import { FilterEnum, FilterToTitle } from 'enum/FilterEnum';
 
@@ -39,9 +38,7 @@ const Filter = (): JSX.Element => {
         <span>
           {FilterToTitle[FilterEnum[filter] as keyof typeof FilterToTitle]}
         </span>
-        <span>
-          {/* <Image src={SelectArrow} alt="arrow" width={8} height={6} /> */}
-        </span>
+        <span></span>
       </S.Filter>
       <S.OptionWrap open={open}>
         {FilterList.map((value: FilterToTitle, index: number) => {
