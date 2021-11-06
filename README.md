@@ -1,34 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### DGIT은 대구소프트웨어마이스터고등학교 학생들의  Github 기여도를 표시하는 서비스입니다.
+> 학생들의 더 나은 개발 문화 및 동기부여의 목적으로 제작되었습니다😊
 
-## Getting Started
+### 안내사항
+- 대구소프트웨어마이스터고등학교 **재학생** 또는 **졸업생** 대상입니다.
+- 비공개 저장소를 기여도로 표시하면 모든 기여도를 확인할 수 있습니다 (Github 설정) 
+- 주간 기여도는 **일요일**부터 **토요일**까지의 기여도가 집계된 것입니다
+- 데이터는 하루 **7번** 동기화됩니다
+- 에러 또는 개선사항은 해당 저장소의 [이슈](https://github.com/Clzzi/DGIT_V2_Client/issues)에 기재해 주세요
+- 사용자 정보 삭제는 [제작자](https://www.instagram.com/clzz._.i/)에게 연락해 주세요
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**데이터 동기화**    
+사용자의 기여도, Bio, 주간 순위등의 데이터는 8시, 10시, 12시, 14시, 16시, 18시, 20시에 동기화 됩니다
