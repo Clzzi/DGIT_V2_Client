@@ -78,3 +78,38 @@ export const Button = styled.div<{ showing: boolean }>`
   transition: 0.2s ease-in-out;
   font-weight: bold;
 `;
+
+export const Loading = styled.div`
+  ${M.selectNone};
+  width: 72px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  background-color: ${(props) => props.theme.background};
+  & > div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border: 3px solid ${(props) => props.theme.modalTitle};
+    border-radius: 50%;
+    animation: ${M.rotateLoding} 1s ease-in-out infinite;
+    border-color: ${(props) => props.theme.modalTitle} transparent transparent
+      transparent;
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    &:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
+`;

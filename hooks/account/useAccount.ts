@@ -10,8 +10,10 @@ const useAccount = (): [
   string,
   Dispatch<SetStateAction<string>>,
   (set: Dispatch<SetStateAction<boolean>>, isEdit: boolean) => Promise<void>,
+  boolean,
 ] => {
   const [input, setInput] = useState<string>('');
+  const [loading, setLoding] = useState<boolean>(false);
   const { handleGetWeekTopUser } = useWeekTop();
   const { getWeekUserList } = useWeekUser();
   const { getTotalUser } = useTotalUser();
@@ -30,6 +32,7 @@ const useAccount = (): [
       }
 
       try {
+        setLoding(true);
         await setGithubId({
           githubId: input,
         });
@@ -37,6 +40,7 @@ const useAccount = (): [
         await getWeekUserList();
         await handleGetWeekTopUser();
         await handleGetList();
+        setLoding(false);
         set(false);
         Toast.successToast(`계정이 ${isEdit ? '수정' : '추가'}되었습니다`);
       } catch (e: any) {
@@ -53,7 +57,7 @@ const useAccount = (): [
     ],
   );
 
-  return [input, setInput, handleGithubId];
+  return [input, setInput, handleGithubId, loading];
 };
 
 export default useAccount;
