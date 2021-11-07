@@ -1,29 +1,22 @@
 import {
-  BRONZEMEDAL_URL,
   GOLDMEDAL_URL,
   SILVERMEDAL_URL,
+  BRONZEMEDAL_URL,
 } from 'constants/medal.constants';
 import { getMedal } from 'util/getMedal';
 
 describe('Test getMedal', () => {
-  const FirstRank = 1;
-  const SecondRank = 2;
-  const ThirdRank = 3;
-  const NotTopRank = 4;
+  const UserRankArray = [1, 2, 3];
+  const MedalArray = [GOLDMEDAL_URL, SILVERMEDAL_URL, BRONZEMEDAL_URL];
+  const NotTopUserRank = 4;
 
-  it('getGoldMedal Correctly', () => {
-    expect(getMedal(FirstRank)).toBe(GOLDMEDAL_URL);
+  it('getMedal Correctly', () => {
+    UserRankArray.forEach((rank) => {
+      expect(getMedal(rank)).toBe(MedalArray[rank - 1]);
+    });
   });
 
-  it('getSilverMedal Correctly', () => {
-    expect(getMedal(SecondRank)).toBe(SILVERMEDAL_URL);
-  });
-
-  it('getBronzeMedal Correctly', () => {
-    expect(getMedal(ThirdRank)).toBe(BRONZEMEDAL_URL);
-  });
-
-  it('getNoMedal', () => {
-    expect(getMedal(NotTopRank)).toBeNull();
+  it('getNoMedal Correctly', () => {
+    expect(getMedal(NotTopUserRank)).toBeNull();
   });
 });
