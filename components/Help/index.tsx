@@ -1,5 +1,5 @@
-import { getGithubURL } from 'util/getGithubURL';
 import * as S from './styles';
+import { ISSUE_URL, REPO_URL, WRITER_URL } from 'constants/help.constants';
 
 const Help = (): JSX.Element => {
   return (
@@ -17,30 +17,21 @@ const Help = (): JSX.Element => {
         <li>데이터는 하루 7번 동기화됩니다.</li>
         <li>
           사용자 정보 삭제는{' '}
-          <a
-            href={'https://www.instagram.com/clzz._.i/'}
-            target="_blank"
-            rel="noreferrer">
+          <a href={WRITER_URL} target="_blank" rel="noreferrer">
             제작자
           </a>
           로 요청해주십시오.
         </li>
         <li>
           에러 또는 개선사항은{' '}
-          <a
-            href={getGithubURL('Clzzi/DGIT_V2_Client/issues')}
-            target="_blank"
-            rel="noreferrer">
+          <a href={ISSUE_URL} target="_blank" rel="noreferrer">
             이슈
           </a>
           를 남겨주세요!
         </li>
         <li>
           자세한 사항은{' '}
-          <a
-            href={getGithubURL('Clzzi/DGIT_V2_Client')}
-            target="_blank"
-            rel="noreferrer">
+          <a href={REPO_URL} target="_blank" rel="noreferrer">
             이곳
           </a>
           을 참고해주십시오.
