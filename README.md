@@ -5,6 +5,8 @@
   <img alt="GithubPages" src ="https://img.shields.io/badge/Github Pages-222222.svg?&style=for-the-badge&logo=GitHub Pages&logoColor=ffffff"/>
   <img alt="NEXTJS" src ="https://img.shields.io/badge/NEXT JS-000000.svg?&style=for-the-badge&logo=Next.js&logoColor=FFFFFF"/>
   <img alt="RECOIL" src ="https://img.shields.io/badge/RECOIL-3578E5.svg?&style=for-the-badge&logo=React&logoColor=ffffff"/>
+  <img alt="JEST" src ="https://img.shields.io/badge/JEST-C21325.svg?&style=for-the-badge&logo=Jest&logoColor=ffffff"/>
+  <img alt="TESTINGLIBRARY" src ="https://img.shields.io/badge/TESTING-E33332.svg?&style=for-the-badge&logo=Testing Library&logoColor=ffffff"/>
 </span>
 
 ### DGIT은 대구소프트웨어고등학교 학생들의  Github 기여도를 표시하는 서비스입니다.

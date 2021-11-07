@@ -1,6 +1,5 @@
 import UserItem from './index';
 import { render, screen } from '@testing-library/react';
-import React from 'react';
 
 describe('<UserItem />', () => {
   const userProfile = 'testImage';
