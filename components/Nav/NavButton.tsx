@@ -1,10 +1,5 @@
+import { INavButton } from 'types/common.type';
 import * as S from './styles';
-
-interface INavButton {
-  title: string;
-  showing: boolean;
-  click: () => void;
-}
 
 const NavButton = ({ title, showing, click }: INavButton): JSX.Element => {
   return (

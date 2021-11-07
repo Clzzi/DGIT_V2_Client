@@ -26,6 +26,12 @@ export interface IModal {
   set: Dispatch<SetStateAction<boolean>>;
 }
 
+export interface INavButton {
+  title: string;
+  showing: boolean;
+  click: () => void;
+}
+
 export interface IAccount {
   isEdit: boolean;
   set: Dispatch<SetStateAction<boolean>>;
