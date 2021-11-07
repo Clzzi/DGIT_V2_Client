@@ -21,5 +21,8 @@
     "import/no-anonymous-default-export": 0,
     "object-shorthand": "error",
     "@typescript-eslint/no-redeclare": 0
+  },
+  "env": {
+    "jest": true
   }
 }

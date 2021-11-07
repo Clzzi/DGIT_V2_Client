@@ -1,6 +1,6 @@
-import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
+import * as M from 'styles/moduleStyle';
 
 export const UserItem = styled.div`
   ${M.selectNone};
