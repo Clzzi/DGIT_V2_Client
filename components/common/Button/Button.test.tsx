@@ -17,6 +17,7 @@ describe('Common <Button />', () => {
 
     const ButtonEl = screen.getByText('버튼');
 
+    expect(ButtonEl.tagName).toMatch(/^div$/i);
     expect(ButtonEl).toHaveStyleRule('color', '#FFFFFF');
     expect(ButtonEl).toHaveStyleRule('background-color', '#000000');
   });
