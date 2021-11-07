@@ -21,4 +21,5 @@
   <img alt="RECOIL" src ="https://img.shields.io/badge/RECOIL-3578E5.svg?&style=for-the-badge&logo=React&logoColor=ffffff"/>
   <img alt="JEST" src ="https://img.shields.io/badge/JEST-C21325.svg?&style=for-the-badge&logo=Jest&logoColor=ffffff"/>
   <img alt="TESTINGLIBRARY" src ="https://img.shields.io/badge/RTL-E33332.svg?&style=for-the-badge&logo=Testing Library&logoColor=ffffff"/>
+  <img alt="ESLINT" src ="https://img.shields.io/badge/ESLINT-4B32C3.svg?&style=for-the-badge&logo=ESLint&logoColor=ffffff"/>
 </span>
