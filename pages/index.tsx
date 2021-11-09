@@ -1,8 +1,6 @@
-import Token from 'lib/token';
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
-import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
 
 const Header = dynamic(() => import('components/Header'));
 const Banner = dynamic(() => import('components/Banner'));
@@ -32,7 +30,7 @@ const Home: NextPage = () => {
       <Nav />
       <PropertyBar />
       <UserList />
-      {Token.getToken(ACCESS_TOKEN_KEY) && <AccountButton />}
+      <AccountButton />
     </div>
   );
 };
