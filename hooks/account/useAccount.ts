@@ -14,10 +14,10 @@ const useAccount = (): [
 ] => {
   const [input, setInput] = useState<string>('');
   const [loading, setLoding] = useState<boolean>(false);
-  const { handleGetWeekTopUser } = useWeekTop();
-  const { getWeekUserList } = useWeekUser();
   const { getTotalUser } = useTotalUser();
+  const { getWeekUserList } = useWeekUser();
   const { userId, handleGetList } = useHeader();
+  const { handleGetWeekTopUser } = useWeekTop();
 
   const handleGithubId = useCallback(
     async (set: Dispatch<SetStateAction<boolean>>, isEdit: boolean) => {
@@ -40,11 +40,12 @@ const useAccount = (): [
         await getWeekUserList();
         await handleGetWeekTopUser();
         await handleGetList();
-        setLoding(false);
-        set(false);
         Toast.successToast(`계정이 ${isEdit ? '수정' : '추가'}되었습니다`);
       } catch (e: any) {
         Toast.errorToast(e.response.data.message);
+      } finally {
+        setLoding(false);
+        set(false);
       }
     },
     [
