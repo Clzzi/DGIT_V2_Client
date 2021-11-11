@@ -30,7 +30,7 @@ const useProperty = () => {
     changePropertyList(nav);
   }, [nav, changePropertyList]);
 
-  return { propertyList };
+  return { propertyList, changePropertyList };
 };
 
 export default useProperty;
