@@ -13,6 +13,6 @@ describe('useTotalUser Testing', () => {
       wrapper,
     });
     await waitForNextUpdate();
-    expect(result.current.totalUser).toEqual(MOCK_TOTALUSERS);
+    expect(result.current.totalUser).toEqual(MOCK_TOTALUSERS.data);
   });
 });
