@@ -12,19 +12,24 @@ const useTotalUser = () => {
   const getTotalUser = useCallback(async () => {
     try {
       const { data } = await getTotalUserRank();
-      setTotalUser(data);
+      return data;
     } catch (e: any) {
       Toast.errorToast(e.response.data.message);
     }
-  }, [setTotalUser]);
+  }, []);
+
+  const setUserInfo = useCallback(async () => {
+    const data = await getTotalUser();
+    data && setTotalUser(data);
+  }, [getTotalUser, setTotalUser]);
 
   useEffect(() => {
-    getTotalUser();
-  }, [getTotalUser]);
+    setUserInfo();
+  }, [setUserInfo]);
 
   return {
     totalUser,
-    getTotalUser,
+    setUserInfo,
   };
 };
 

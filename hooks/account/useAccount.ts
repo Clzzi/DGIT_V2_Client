@@ -14,7 +14,7 @@ const useAccount = (): [
 ] => {
   const [input, setInput] = useState<string>('');
   const [loading, setLoding] = useState<boolean>(false);
-  const { getTotalUser } = useTotalUser();
+  const { setUserInfo } = useTotalUser();
   const { getWeekUserList } = useWeekUser();
   const { userId, handleGetList } = useHeader();
   const { handleGetWeekTopUser } = useWeekTop();
@@ -36,7 +36,7 @@ const useAccount = (): [
         await setGithubId({
           githubId: input,
         });
-        await getTotalUser();
+        await setUserInfo();
         await getWeekUserList();
         await handleGetWeekTopUser();
         await handleGetList();
@@ -51,7 +51,7 @@ const useAccount = (): [
     [
       input,
       handleGetWeekTopUser,
-      getTotalUser,
+      setUserInfo,
       getWeekUserList,
       handleGetList,
       userId,
