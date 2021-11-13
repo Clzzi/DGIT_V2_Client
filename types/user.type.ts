@@ -5,7 +5,6 @@ export interface ITotalUserRank {
 
 export interface ITotalUser {
   bio: string;
-  createdAt: string;
   githubId: string;
   totalContributions: number;
   user: IUser;
