@@ -8,7 +8,7 @@ import {
 
 const handlers = [
   // auth
-  rest.get('/auth/login', (req, res, ctx) => {
+  rest.post('http://localhost/undefined/auth/login', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(MOCK_TOKEN));
   }),
 
