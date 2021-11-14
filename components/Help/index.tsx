@@ -27,7 +27,7 @@ const Help = (): JSX.Element => {
           <a href={ISSUE_URL} target="_blank" rel="noreferrer">
             이슈
           </a>
-          를 남겨주세요!
+          를 남겨주세요.
         </li>
         <li>
           자세한 사항은{' '}
