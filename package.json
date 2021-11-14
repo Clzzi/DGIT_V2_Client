@@ -4,8 +4,7 @@
   "homepage": "http://dgit.b1nd.com",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
+    "build": "next build && next export",
     "start": "next start",
     "deploy": "rm -rf node_modules/.cache && next build && next export && echo dgit.b1nd.com > out/CNAME && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout main && git branch -D temp-for-deploy-gh-pages",
     "lint": "next lint",
