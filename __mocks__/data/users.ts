@@ -16,7 +16,7 @@ export const MOCK_TOTALUSERS: ITotalUserRankResponse = {
         totalContributions: 2100,
         user: {
           id: 'user_id_value',
-          name: 'Clzzi',
+          name: '손민재',
         },
         userImage: 'http://test.jpg',
       },
