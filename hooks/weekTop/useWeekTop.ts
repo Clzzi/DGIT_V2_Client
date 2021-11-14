@@ -1,22 +1,31 @@
-import { getWeekTopUserList } from 'lib/api/user/user.api';
 import Toast from 'lib/toast';
-import { useCallback, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { weekTopUserState } from 'store/user';
+import { useCallback, useEffect } from 'react';
 import { IWeekTopList } from 'types/user.type';
+import { weekTopUserState } from 'store/user';
+import { getWeekTopUserList } from 'lib/api/user/user.api';
 
 const useWeekTop = () => {
   const [weekTopUser, setWeekTopUser] =
     useRecoilState<IWeekTopList[]>(weekTopUserState);
 
-  const handleGetWeekTopUser = useCallback(async () => {
+  const getWeekTopUser = useCallback(async () => {
     try {
       const { data } = await getWeekTopUserList();
-      setWeekTopUser(data);
+      return data;
     } catch (e: any) {
       Toast.errorToast(e.response.data.message);
     }
-  }, [setWeekTopUser]);
+  }, []);
+
+  const handleGetWeekTopUser = useCallback(async () => {
+    try {
+      const data = await getWeekTopUser();
+      data && setWeekTopUser(data);
+    } catch (e: any) {
+      Toast.errorToast(e.response.data.message);
+    }
+  }, [getWeekTopUser, setWeekTopUser]);
 
   useEffect(() => {
     handleGetWeekTopUser();

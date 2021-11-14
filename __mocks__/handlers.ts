@@ -1,6 +1,10 @@
 import { rest } from 'msw';
 import { MOCK_INFO, MOCK_TOKEN } from './data/auth';
-import { MOCK_TOTALUSERS, MOCK_WEEKUSERS } from './data/users';
+import {
+  MOCK_TOTALUSERS,
+  MOCK_WEEKTOPUSERS,
+  MOCK_WEEKUSERS,
+} from './data/users';
 
 const handlers = [
   // auth
@@ -19,6 +23,10 @@ const handlers = [
 
   rest.get('/week', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(MOCK_WEEKUSERS));
+  }),
+
+  rest.get('/weekly/top', (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(MOCK_WEEKTOPUSERS));
   }),
 ];
 
