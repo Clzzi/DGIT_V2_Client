@@ -1,6 +1,6 @@
 import { RecoilRoot } from 'recoil';
 import useTotalUser from 'hooks/totalUser/useTotalUser';
-import { act, renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 import { MOCK_TOTALUSERS } from '__mocks__/data/users';
 
 describe('useTotalUser Testing', () => {

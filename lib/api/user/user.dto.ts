@@ -14,7 +14,7 @@ export interface IWeekUserRankResponse extends IResponse {
   data: IWeekUserRank[];
 }
 
-export interface IGetUserInfoResponse extends Response {
+export interface IGetUserInfoResponse extends IResponse {
   data: IUser;
 }
 
