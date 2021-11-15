@@ -12,8 +12,8 @@ permissions:
     owner: ubuntu
     group: ubuntu
 
-hooks:
-  AfterInstall:
-    - location: scripts/deploy.sh
-      timeout: 60
-      runas: root
+# hooks:
+#   AfterInstall:
+#     - location: scripts/deploy.sh
+#       timeout: 60
+#       runas: root
