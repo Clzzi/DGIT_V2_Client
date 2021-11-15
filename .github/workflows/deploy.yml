@@ -21,6 +21,11 @@ jobs:
           npm install -g yarn
           yarn install --frozen-lockfile
           yarn build
+
+    - name: Create Zip File
+        run: zip out.zip -r ./out/*
+        shell: bash
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -30,3 +35,6 @@ jobs:
 
       - name: Deploy to S3
         run: aws s3 sync ./${{ secrets.BUILD_DIRECTORY }} ${{ secrets.AWS_S3_BUCKET_NAME }} --acl public-read --delete
+
+      - name: CodeDeploy
+        run: aws deploy create-deployment --application-name DGIT-V2 --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name DGIT-V2-Group bucket=dgit-v2,bundleType=zip,key=out.zip
