@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+            - source: /
+               destination: /build/
+               overwrite: yes
+hooks:
+            - location: deploy.sh
+               timeout: 60
+               runas: root
