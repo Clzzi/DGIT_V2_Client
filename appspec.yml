@@ -1,10 +1,12 @@
 version: 0.0
 os: linux
+
 files:
-            - source: /
-               destination: /build/
-               overwrite: yes
+  - source:  /
+    destination: /build/
+
 hooks:
-            - location: deploy.sh
-               timeout: 60
-               runas: root
+  AfterInstall:
+    - location: deploy.sh
+      timeout: 60
+      runas: root

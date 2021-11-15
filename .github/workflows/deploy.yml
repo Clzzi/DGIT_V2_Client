@@ -23,7 +23,10 @@ jobs:
           yarn build
 
       - name: Create Zip File
-        run: zip out.zip -r ./out/*
+        run: |
+          zip out.zip -r ./out/*
+          mkdir -p build
+          mv out.zip build/out.zip
        
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -39,4 +42,4 @@ jobs:
         run: aws deploy push --application-name DGIT-V2 --description "DGIT-V2-DeployMent" --s3-location s3://dgit-v2/out.zip --source .
 
       - name: CodeDeploy
-        run: aws deploy create-deployment --application-name DGIT-V2 --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name DGIT-V2-Group --s3-location bucket=dgit-v2,bundleType=zip,key=out.zip
+        run: aws deploy create-deployment --application-name DGIT-V2 --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name DGIT-V2-Group --s3-location bucket=dgit-v2,bundleType=zip,key=out
