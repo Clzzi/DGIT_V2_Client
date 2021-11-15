@@ -35,11 +35,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy to S3
-        run: aws s3 sync ./${{ secrets.BUILD_DIRECTORY }} ${{ secrets.AWS_S3_BUCKET_NAME }} --acl public-read --delete
+      # - name: Deploy to S3
+      #   run: aws s3 sync ./${{ secrets.BUILD_DIRECTORY }} ${{ secrets.AWS_S3_BUCKET_NAME }} --acl public-read --delete
 
       - name: S3 upload
         run: aws deploy push --application-name DGIT-V2 --description "DGIT-V2-DeployMent" --s3-location s3://dgit-v2/out.zip --source .
 
       - name: CodeDeploy
-        run: aws deploy create-deployment --application-name DGIT-V2 --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name DGIT-V2-Group --s3-location bucket=dgit-v2,bundleType=zip,key=out
+        run: aws deploy create-deployment --application-name DGIT-V2 --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name DGIT-V2-Group --s3-location bucket=dgit-v2,bundleType=zip,key=out.zip
