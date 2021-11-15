@@ -3,10 +3,10 @@ os: linux
 
 files:
   - source:  /
-    destination: /build/
+    destination: /home/ubuntu/DGIT_V2_Client/build/
 
 hooks:
   AfterInstall:
     - location: deploy.sh
       timeout: 60
-      runas: root
+      runas: ubuntu
