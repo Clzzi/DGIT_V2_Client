@@ -1,4 +1,9 @@
 #!/bin/bash
-npm install -g pm2
-pm2 delete all
+
+cd  /home/ubuntu/DGIT_V2_Client
+
+ls
+
+git pull
+yarn build
 pm2 start yarn -w -i 0 --name "DGIT-V2" -- start
