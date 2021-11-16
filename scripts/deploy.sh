@@ -1,13 +1,8 @@
 #!/bin/bash
 
-cd  /home/ubuntu/DGIT_V2_Client
+cd  /home/ubuntu/build
 
-ls
+ls 
+ll
 
-git pull
-
-node -v
-npm -v
-
-yarn build
 pm2 start yarn -w -i 0 --name "DGIT-V2" -- start
