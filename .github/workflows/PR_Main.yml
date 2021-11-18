@@ -21,15 +21,3 @@ jobs:
 
       - name: Jest Test
         run: yarn test
-  JSET-COVERAGE:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
-        env: 
-          GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
-        with:
-          coverage-file: ./report.json
-          base-coverage-file: ./coverage/coverage-final.json
-          test-script: yarn test
-
