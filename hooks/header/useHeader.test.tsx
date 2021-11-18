@@ -8,9 +8,9 @@ describe('useHeader Testing', () => {
   });
   it('Return Value Correctly', async () => {
     const { result, waitForNextUpdate } = customRenderHook(() => useHeader());
-    await waitForNextUpdate({ timeout: 4000 });
+    await waitForNextUpdate();
     expect(result.current.userId).toEqual(['손민재', 'USER']);
-    await waitForNextUpdate({ timeout: 4000 });
+    await waitForNextUpdate();
     expect(result.current.user).toEqual(MOCK_INFO.data);
     expect(result.current.isMyAccount).toEqual(true);
   });
