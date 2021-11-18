@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: mattallty/jest-github-action@v1
+      - uses: dkershner6/jest-coverage-commenter-action@v1
         env: 
           GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
         with:
