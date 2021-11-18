@@ -29,5 +29,6 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
         with:
-          test-command: "yarn test"
+          test-script: "yarn test"
+          coverage-file: "coverage-final.json"
 
