@@ -26,6 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: artiomtr/jest-coverage-report-action@v1.3
+        env: 
+          GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
         with:
-          github-token: ${{ secrets.DGIT_TOKEN }}
+          test-command: "yarn test"
 
