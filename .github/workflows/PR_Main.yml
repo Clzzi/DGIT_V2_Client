@@ -29,5 +29,5 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
         with:
-          test-script: yarn run test:jest --silent --ci --testLocationInResults --colors --coverage --json --outputFile=report.json
+          test-script: yarn test
 

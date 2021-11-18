@@ -7,4 +7,5 @@ module.exports = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jsdom',
   restoreMocks: true,
+  coverageReporters: ['text', 'text-summary', 'json'],
 };
