@@ -25,9 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: dkershner6/jest-coverage-commenter-action@v1
+      - uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
         env: 
-          github_token: ${{ secrets.DGIT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
         with:
           test-command: "yarn test"
 
