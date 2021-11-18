@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: artiomtr/jest-coverage-report-action@v1.3
+      - uses: mattallty/jest-github-action@v1
         env: 
           GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
         with:
