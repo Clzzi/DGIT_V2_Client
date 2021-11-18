@@ -24,7 +24,8 @@ jobs:
   JSET-COVERAGE:
     runs-on: ubuntu-latest
     steps:
-      - uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
+      - uses: actions/checkout@v2
+      - uses: artiomtr/jest-coverage-report-action@v1.3
         with:
           github-token: ${{ secrets.GH_TOKEN }}
 
