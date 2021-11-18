@@ -2,7 +2,7 @@ import useLogin from './useLogin';
 import { customRenderHook } from 'util/customRenderHook';
 
 describe('useLogin Testing', () => {
-  it('TEST Login and Location Change', async () => {
+  it('Do Login and Location Change', async () => {
     const { result, waitFor } = customRenderHook(() => useLogin());
     await waitFor(() => {
       result.current.login('TESTING_CODE');
