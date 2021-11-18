@@ -29,5 +29,7 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
         with:
+          coverage-file: ./report.json
+          base-coverage-file: ./coverage/coverage-final.json
           test-script: yarn test
 
