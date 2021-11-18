@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dkershner6/jest-coverage-commenter-action@v1
         env: 
-          GITHUB_TOKEN: ${{ secrets.DGIT_TOKEN }}
+          github_token: ${{ secrets.DGIT_TOKEN }}
         with:
           test-command: "yarn test"
 
