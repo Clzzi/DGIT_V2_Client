@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  continuous-deployment:
+  JEST-TESTING:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
@@ -21,4 +21,3 @@ jobs:
 
       - name: Jest Test
         run: yarn test
-
