@@ -36,10 +36,12 @@ const useAccount = (): [
         await setGithubId({
           githubId: input,
         });
-        await setUserInfo();
-        await getWeekUserList();
-        await handleGetWeekTopUser();
-        await handleGetList();
+        await Promise.allSettled([
+          setUserInfo,
+          getWeekUserList,
+          handleGetWeekTopUser,
+          handleGetList,
+        ]);
         Toast.successToast(`계정이 ${isEdit ? '수정' : '추가'}되었습니다`);
       } catch (e: any) {
         Toast.errorToast(e.response.data.message);
