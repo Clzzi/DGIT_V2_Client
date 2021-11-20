@@ -22,4 +22,5 @@
   <img alt="JEST" src ="https://img.shields.io/badge/JEST-C21325.svg?&style=for-the-badge&logo=Jest&logoColor=ffffff"/>
   <img alt="TESTINGLIBRARY" src ="https://img.shields.io/badge/RTL-E33332.svg?&style=for-the-badge&logo=Testing Library&logoColor=ffffff"/>
   <img alt="ESLINT" src ="https://img.shields.io/badge/ESLINT-4B32C3.svg?&style=for-the-badge&logo=ESLint&logoColor=ffffff"/>
+  <img alt="GITHUBACTIONS" src ="https://img.shields.io/badge/GitHub Actions-2088FF.svg?&style=for-the-badge&logo=GitHub Actions&logoColor=ffffff"/>
 </span>
