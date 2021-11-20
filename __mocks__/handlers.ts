@@ -1,14 +1,14 @@
-import { rest } from 'msw';
-import { MOCK_INFO, MOCK_TOKEN } from './data/auth';
 import {
   MOCK_TOTALUSERS,
   MOCK_WEEKTOPUSERS,
   MOCK_WEEKUSERS,
 } from './data/users';
+import { rest } from 'msw';
+import { MOCK_INFO, MOCK_TOKEN } from './data/auth';
 
 const handlers = [
   // auth
-  rest.post('http://localhost/undefined/auth/login', (req, res, ctx) => {
+  rest.post('/auth/login', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(MOCK_TOKEN));
   }),
 
