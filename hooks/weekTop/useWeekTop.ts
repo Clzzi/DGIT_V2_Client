@@ -9,23 +9,14 @@ const useWeekTop = () => {
   const [weekTopUser, setWeekTopUser] =
     useRecoilState<IWeekTopList[]>(weekTopUserState);
 
-  const getWeekTopUser = useCallback(async () => {
-    try {
-      const { data } = await getWeekTopUserList();
-      return data;
-    } catch (e: any) {
-      Toast.errorToast(e.response.data.message);
-    }
-  }, []);
-
   const handleGetWeekTopUser = useCallback(async () => {
     try {
-      const data = await getWeekTopUser();
-      data && setWeekTopUser(data);
+      const { data } = await getWeekTopUserList();
+      setWeekTopUser(data);
     } catch (e: any) {
       Toast.errorToast(e.response.data.message);
     }
-  }, [getWeekTopUser, setWeekTopUser]);
+  }, [setWeekTopUser]);
 
   useEffect(() => {
     handleGetWeekTopUser();

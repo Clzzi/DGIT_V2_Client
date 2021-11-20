@@ -9,19 +9,14 @@ const useTotalUser = () => {
   const [totalUser, setTotalUser] =
     useRecoilState<ITotalUserRank>(totalUserState);
 
-  const getTotalUser = useCallback(async () => {
+  const setUserInfo = useCallback(async () => {
     try {
       const { data } = await getTotalUserRank();
-      return data;
+      setTotalUser(data);
     } catch (e: any) {
       Toast.errorToast(e.response.data.message);
     }
-  }, []);
-
-  const setUserInfo = useCallback(async () => {
-    const data = await getTotalUser();
-    data && setTotalUser(data);
-  }, [getTotalUser, setTotalUser]);
+  }, [setTotalUser]);
 
   useEffect(() => {
     setUserInfo();
