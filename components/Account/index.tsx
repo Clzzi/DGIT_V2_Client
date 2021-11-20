@@ -15,6 +15,7 @@ const Account = ({ isEdit, set }: IAccount): JSX.Element => {
         <S.Input
           placeholder="Github 아이디 (example-user)"
           value={input}
+          autoFocus
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setInput(e.target.value)
           }
