@@ -19,3 +19,9 @@ export const MOCK_INFO: IGetUserInfoResponse = {
     name: '손민재',
   },
 };
+
+export const MOCK_REFRESHTOKEN = {
+  status: 200,
+  message: '토큰 재발급 성공',
+  data: 'REFRESH_TOKEN',
+};

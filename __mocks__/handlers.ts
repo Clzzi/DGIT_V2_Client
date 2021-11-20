@@ -4,12 +4,16 @@ import {
   MOCK_WEEKUSERS,
 } from './data/users';
 import { rest } from 'msw';
-import { MOCK_INFO, MOCK_TOKEN } from './data/auth';
+import { MOCK_INFO, MOCK_REFRESHTOKEN, MOCK_TOKEN } from './data/auth';
 
 const handlers = [
   // auth
   rest.post('/auth/login', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(MOCK_TOKEN));
+  }),
+
+  rest.post('/token/refresh', (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(MOCK_REFRESHTOKEN));
   }),
 
   rest.get('/user/my', (req, res, ctx) => {
