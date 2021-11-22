@@ -19,7 +19,7 @@ export const Title = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  color: ${(props) => props.theme.modalContent};
+  color: ${(props) => props.theme.modalTitle};
   font-size: ${FontConfig.font30};
   font-weight: bold;
 `;
@@ -53,6 +53,7 @@ export const Input = styled.input`
   border-bottom: 1px solid ${(props) => props.theme.modalBorder};
   padding-bottom: 14px;
   font-weight: bold;
+  background-color: transparent;
   &::placeholder {
     font-size: ${FontConfig.font24};
     font-weight: 400;
@@ -66,7 +67,7 @@ export const Button = styled.div<{ showing: boolean }>`
   height: 40px;
   font-size: ${FontConfig.font18};
   color: ${(props) =>
-    props.showing ? props.theme.modalContent : props.theme.modalBorder};
+    props.showing ? props.theme.modalContent : props.theme.modalIntro};
   display: flex;
   justify-content: center;
   align-items: center;
