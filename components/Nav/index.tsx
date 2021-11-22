@@ -1,7 +1,12 @@
 import * as S from './styles';
-import NavButton from './NavButton';
 import useNav from 'hooks/nav/useNav';
-import Theme from 'components/Theme';
+import dynamic from 'next/dynamic';
+import { memo } from 'react';
+
+const Theme = dynamic(() => import('components/Theme'), { ssr: false });
+const NavButton = dynamic(() => import('components/Nav/NavButton'), {
+  ssr: false,
+});
 
 const Nav = (): JSX.Element => {
   const [nav, onChangeNav] = useNav();
@@ -38,4 +43,4 @@ const Nav = (): JSX.Element => {
   );
 };
 
-export default Nav;
+export default memo(Nav);

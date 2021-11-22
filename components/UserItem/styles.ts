@@ -17,8 +17,7 @@ export const UserItem = styled.div`
   color: ${(props) => props.theme.mainContent};
   font-size: ${FontConfig.font18};
   cursor: pointer;
-  transition: 0.1s ease-in-out;
-  animation: ${M.fadeIn} 0.2s ease-in-out;
+  animation: ${M.fadeIn} 0.1s ease-in-out;
   &:hover {
     background-color: ${(props) => props.theme.navFilterBackground};
   }

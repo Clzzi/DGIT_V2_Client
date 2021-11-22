@@ -24,5 +24,7 @@ declare module 'styled-components' {
     themeBackground: string;
     themeBall: string;
     mainContentBackground: string;
+    skeletonBackground: string;
+    skeletonContent: string;
   }
 }
