@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
+import Banner from 'components/Banner';
 
-const Banner = dynamic(() => import('components/Banner'));
 const UserList = dynamic(() => import('components/UserList'));
 const Nav = dynamic(() => import('components/Nav'), { ssr: false });
 const Header = dynamic(() => import('components/Header'), { ssr: false });
