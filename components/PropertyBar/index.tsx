@@ -19,4 +19,4 @@ const PropertyBar = (): JSX.Element => {
   );
 };
 
-export default PropertyBar
+export default PropertyBar;

@@ -9,4 +9,4 @@ const NavButton = ({ title, showing, click }: INavButton): JSX.Element => {
   );
 };
 
-export default NavButton
+export default NavButton;
