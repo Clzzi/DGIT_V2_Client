@@ -27,7 +27,7 @@ export const lightTheme: DefaultTheme = {
 
 export const darkTheme: DefaultTheme = {
   background: '#2F2F2F',
-  hightlight: '#2342D9',
+  hightlight: '#607BFF',
   mainContentBackground: 'rgba(255,255,255,0.05)',
   mainContent: '#FFFFFF',
   mainProperty: '#FFFFFF',
