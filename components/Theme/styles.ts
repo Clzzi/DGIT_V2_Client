@@ -10,7 +10,7 @@ export const ThemeLabel = styled.label`
   width: 56px;
   height: 28px;
   border-radius: 15px;
-  background-color: ${(props) => props.theme.themeBackground};
+  background-color: ${({ theme }) => theme.themeBackground};
   cursor: pointer;
   &::after {
     content: '';
@@ -19,7 +19,7 @@ export const ThemeLabel = styled.label`
     width: 18px;
     height: 18px;
     margin: 4.8px;
-    background-color: ${(props) => props.theme.themeBall};
+    background-color: ${({ theme }) => theme.themeBall};
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
     transition: 0.2s;
   }
@@ -31,7 +31,7 @@ export const Theme = styled.input`
   width: 56px;
   height: 28px;
   &:checked + ${ThemeLabel} {
-    background-color: ${(props) => props.theme.themeBackground};
+    background-color: ${({ theme }) => theme.themeBackground};
     &::after {
       content: '';
       display: block;
@@ -40,7 +40,7 @@ export const Theme = styled.input`
       height: 18px;
       margin-left: 33px;
       transition: 0.2.5s ease-in-out;
-      background-color: ${(props) => props.theme.themeBall};
+      background-color: ${({ theme }) => theme.themeBall};
     }
   }
 `;

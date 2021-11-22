@@ -1,7 +1,6 @@
 import * as S from './styles';
 import LightLOGO from 'assets/LightLogo.svg';
 import DarkLOGO from 'assets/DarkLogo.svg';
-import * as styledUtil from 'styled-components';
 import Button from 'components/common/Button';
 import { useEffect, useState } from 'react';
 import Modal from 'components/common/Modal';
@@ -15,8 +14,7 @@ import useTheme from 'hooks/util/useTheme';
 const Header = (): JSX.Element => {
   const router = useRouter();
   const { login } = useLogin();
-  const theme = styledUtil.useTheme();
-  const { currentTheme } = useTheme();
+  const { currentTheme, theme } = useTheme();
   const [isHelpModal, setIsHelpModal] = useState<boolean>(false);
 
   useEffect(() => {

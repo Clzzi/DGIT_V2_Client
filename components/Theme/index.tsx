@@ -8,7 +8,7 @@ const Theme = (): JSX.Element => {
   return (
     <S.ThemeWrapper>
       <S.Theme
-        checked={currentTheme === ThemeEnum.DARK ? true : false}
+        defaultChecked={currentTheme === ThemeEnum.DARK ? true : false}
         onClick={handleChangeTheme}
         id="Theme"
         type="checkbox"

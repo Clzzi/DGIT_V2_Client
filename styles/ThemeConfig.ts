@@ -45,7 +45,7 @@ export const darkTheme: DefaultTheme = {
   modalBorder: '#E5E5E5',
   modalContent: '#FFFFFF',
   modalSubTitle: '#ACACAC',
-  modalBackground: 'rgba(60, 65, 89, 0.5)',
+  modalBackground: 'rgba(60, 65, 89, 0.7)',
   themeBackground: 'rgba(255,255,255,0.2)',
   themeBall: '#2f2f2f',
 };

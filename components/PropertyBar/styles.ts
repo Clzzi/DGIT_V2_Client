@@ -19,7 +19,7 @@ export const PropertyBarContent = styled.div`
   justify-content: start;
   align-items: center;
   text-align: center;
-  background-color: ${(props) => props.theme.mainPropertyBackground};
+  background-color: ${({ theme }) => theme.mainPropertyBackground};
   border-radius: 8px;
 `;
 

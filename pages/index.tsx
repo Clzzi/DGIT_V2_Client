@@ -1,23 +1,19 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
-import styled from 'styled-components';
 
-const Header = dynamic(() => import('components/Header'));
 const Banner = dynamic(() => import('components/Banner'));
-const Nav = dynamic(() => import('components/Nav'));
-const PropertyBar = dynamic(() => import('components/PropertyBar'));
 const UserList = dynamic(() => import('components/UserList'));
+const Nav = dynamic(() => import('components/Nav'), { ssr: false });
+const Header = dynamic(() => import('components/Header'), { ssr: false });
 const AccountButton = dynamic(() => import('components/AccountButton'));
-
-const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.background};
-  min-height: 100vh;
-`;
+const PropertyBar = dynamic(() => import('components/PropertyBar'), {
+  ssr: false,
+});
 
 const Home: NextPage = () => {
   return (
-    <Wrapper>
+    <div>
       <Head>
         <title>{'DGIT'}</title>
         <meta
@@ -37,7 +33,7 @@ const Home: NextPage = () => {
       <PropertyBar />
       <UserList />
       <AccountButton />
-    </Wrapper>
+    </div>
   );
 };
 

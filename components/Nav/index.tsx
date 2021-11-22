@@ -5,6 +5,7 @@ import Theme from 'components/Theme';
 
 const Nav = (): JSX.Element => {
   const [nav, onChangeNav] = useNav();
+
   return (
     <S.Nav>
       <S.NavContent>
