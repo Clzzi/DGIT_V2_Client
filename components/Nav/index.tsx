@@ -1,5 +1,7 @@
 import * as S from './styles';
 import useNav from 'hooks/nav/useNav';
+import NavButton from './NavButton';
+import Theme from 'components/Theme';
 
 const Nav = (): JSX.Element => {
   const [nav, onChangeNav] = useNav();
