@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     :visited,
     :link {
       text-decoration: none;
-      color: ${(props) => props.theme.mainContent}
+      color: ${({ theme }) => theme.mainContent}
     }
     ol,
     ul {
@@ -31,6 +31,11 @@ const GlobalStyle = createGlobalStyle`
       &:focus {
         outline: none;
       }
+    }
+
+    body {
+    background-color: ${({ theme }) => theme.background};
+    min-height: 100vh;
     }
 `;
 export default GlobalStyle;

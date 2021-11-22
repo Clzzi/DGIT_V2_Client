@@ -2,12 +2,14 @@ import Head from 'next/head';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
-const Header = dynamic(() => import('components/Header'));
 const Banner = dynamic(() => import('components/Banner'));
-const Nav = dynamic(() => import('components/Nav'));
-const PropertyBar = dynamic(() => import('components/PropertyBar'));
 const UserList = dynamic(() => import('components/UserList'));
+const Nav = dynamic(() => import('components/Nav'), { ssr: false });
+const Header = dynamic(() => import('components/Header'), { ssr: false });
 const AccountButton = dynamic(() => import('components/AccountButton'));
+const PropertyBar = dynamic(() => import('components/PropertyBar'), {
+  ssr: false,
+});
 
 const Home: NextPage = () => {
   return (

@@ -21,5 +21,8 @@ declare module 'styled-components' {
     modalContent: string;
     modalSubTitle: string;
     modalBackground: string;
+    themeBackground: string;
+    themeBall: string;
+    mainContentBackground: string;
   }
 }

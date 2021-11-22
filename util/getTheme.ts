@@ -4,7 +4,6 @@ import { THEME_KEY } from 'constants/theme.constants';
 
 export const getTheme = (): ThemeEnum => {
   const theme: ThemeEnum = Number(local.get(THEME_KEY));
-
   if (theme === ThemeEnum.DARK) {
     return ThemeEnum.DARK;
   }

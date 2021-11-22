@@ -38,8 +38,7 @@ export const NavButton = styled.div<{ showing: boolean }>`
   cursor: pointer;
   transition: 0.2s ease-in-out;
   border-bottom: 2px solid
-    ${(props) =>
-      props.showing ? props.theme.navTitle : props.theme.background};
+    ${(props) => (props.showing ? props.theme.navTitle : 'transparent')};
   & > div {
     transition: 0.2s ease-in-out;
     font-size: ${FontConfig.font18};

@@ -1,6 +1,6 @@
 import * as S from './styles';
-import LOGO from 'assets/Logo.svg';
-import { useTheme } from 'styled-components';
+import LightLOGO from 'assets/LightLogo.svg';
+import DarkLOGO from 'assets/DarkLogo.svg';
 import Button from 'components/common/Button';
 import { useEffect, useState } from 'react';
 import Modal from 'components/common/Modal';
@@ -9,11 +9,12 @@ import { useRouter } from 'next/router';
 import Token from 'lib/token';
 import useLogin from 'hooks/login/useLogin';
 import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
+import useTheme from 'hooks/util/useTheme';
 
 const Header = (): JSX.Element => {
   const router = useRouter();
   const { login } = useLogin();
-  const theme = useTheme();
+  const { currentTheme, theme } = useTheme();
   const [isHelpModal, setIsHelpModal] = useState<boolean>(false);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ const Header = (): JSX.Element => {
     <>
       <S.Header>
         <S.HeaderContent>
-          <LOGO />
+          {currentTheme ? <DarkLOGO /> : <LightLOGO />}
           <S.HeaderButton>
             {SignButton()}
             <Button
