@@ -46,3 +46,17 @@ export const rotateLoding = keyframes`
     transform: rotate(360deg);
   }
 `;
+
+export const skeletonAnimation = keyframes`
+  0% {
+        background-color: rgba(165, 165, 165, 0.1);
+  }
+
+  50% {
+      background-color: rgba(165, 165, 165, 0.2);
+  }
+
+  100% {
+      background-color: rgba(165, 165, 165, 0.1);
+  }
+`;

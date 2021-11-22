@@ -1,5 +1,6 @@
 import * as S from './styles';
 import { ISSUE_URL, REPO_URL, WRITER_URL } from 'constants/help.constants';
+import { memo } from 'react';
 
 const Help = (): JSX.Element => {
   return (
@@ -41,4 +42,4 @@ const Help = (): JSX.Element => {
   );
 };
 
-export default Help;
+export default memo(Help);

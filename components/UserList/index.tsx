@@ -3,15 +3,29 @@ import useTotalUser from 'hooks/totalUser/useTotalUser';
 import useWeekTop from 'hooks/weekTop/useWeekTop';
 import useWeekUser from 'hooks/weekUser/useWeekUser';
 import dynamic from 'next/dynamic';
+import { memo } from 'react';
+import styled from 'styled-components';
 import * as S from './styles';
 
 const UserItem = dynamic(() => import('components/UserItem'));
+const SkeletonUserItem = dynamic(() => import('components/SkeletonUserItem'), {
+  ssr: false,
+});
 
 const UserList = (): JSX.Element => {
   const [nav] = useNav();
   const { totalUser } = useTotalUser();
   const { weekUser } = useWeekUser();
   const { weekTopUser } = useWeekTop();
+
+  const UserItemWrapper = styled.div`
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  `;
 
   const getUserList = () => {
     if (totalUser.users && weekUser.length) {
@@ -65,9 +79,19 @@ const UserList = (): JSX.Element => {
 
   return (
     <S.UserList>
-      <S.UserListContent>{getUserList()}</S.UserListContent>
+      {weekTopUser.length ? (
+        <S.UserListContent>{getUserList()}</S.UserListContent>
+      ) : (
+        <UserItemWrapper>
+          <SkeletonUserItem />
+          <SkeletonUserItem />
+          <SkeletonUserItem />
+          <SkeletonUserItem />
+          <SkeletonUserItem />
+        </UserItemWrapper>
+      )}
     </S.UserList>
   );
 };
 
-export default UserList;
+export default memo(UserList);

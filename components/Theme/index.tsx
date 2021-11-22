@@ -1,5 +1,6 @@
 import { ThemeEnum } from 'enum/ThemeEnum';
 import useTheme from 'hooks/util/useTheme';
+import { memo } from 'react';
 import * as S from './styles';
 
 const Theme = (): JSX.Element => {
@@ -18,4 +19,4 @@ const Theme = (): JSX.Element => {
   );
 };
 
-export default Theme;
+export default memo(Theme);

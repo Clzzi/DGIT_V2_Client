@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { INavButton } from 'types/common.type';
 import * as S from './styles';
 
@@ -9,4 +10,4 @@ const NavButton = ({ title, showing, click }: INavButton): JSX.Element => {
   );
 };
 
-export default NavButton;
+export default memo(NavButton);

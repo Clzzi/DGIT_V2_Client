@@ -1,8 +1,5 @@
 import * as S from './styles';
-import LightLOGO from 'assets/LightLogo.svg';
-import DarkLOGO from 'assets/DarkLogo.svg';
-import Button from 'components/common/Button';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import Modal from 'components/common/Modal';
 import Help from 'components/Help';
 import { useRouter } from 'next/router';
@@ -10,6 +7,13 @@ import Token from 'lib/token';
 import useLogin from 'hooks/login/useLogin';
 import { ACCESS_TOKEN_KEY } from 'constants/auth.constants';
 import useTheme from 'hooks/util/useTheme';
+import dynamic from 'next/dynamic';
+
+const DarkLOGO = dynamic(() => import('assets/DarkLogo.svg'), { ssr: false });
+const LightLOGO = dynamic(() => import('assets/LightLogo.svg'), { ssr: false });
+const Button = dynamic(() => import('components/common/Button'), {
+  ssr: false,
+});
 
 const Header = (): JSX.Element => {
   const router = useRouter();
@@ -74,4 +78,4 @@ const Header = (): JSX.Element => {
   );
 };
 
-export default Header;
+export default memo(Header);

@@ -23,6 +23,8 @@ export const lightTheme: DefaultTheme = {
   modalBackground: 'rgba(60, 65, 89, 0.5)',
   themeBackground: '#2F2F2F',
   themeBall: '#FFFFFF',
+  skeletonBackground: '#EEEEEE',
+  skeletonContent: '#E3E3E3',
 };
 
 export const darkTheme: DefaultTheme = {
@@ -48,4 +50,6 @@ export const darkTheme: DefaultTheme = {
   modalBackground: 'rgba(60, 65, 89, 0.7)',
   themeBackground: 'rgba(255,255,255,0.2)',
   themeBall: '#2f2f2f',
+  skeletonBackground: 'rgba(255,255,255,0.05)',
+  skeletonContent: 'rgba(255,255,255,0.2)',
 };
