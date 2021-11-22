@@ -3,6 +3,7 @@ import useTotalUser from 'hooks/totalUser/useTotalUser';
 import useWeekTop from 'hooks/weekTop/useWeekTop';
 import useWeekUser from 'hooks/weekUser/useWeekUser';
 import dynamic from 'next/dynamic';
+import { memo } from 'react';
 import styled from 'styled-components';
 import * as S from './styles';
 
@@ -93,4 +94,4 @@ const UserList = (): JSX.Element => {
   );
 };
 
-export default UserList;
+export default memo(UserList);
