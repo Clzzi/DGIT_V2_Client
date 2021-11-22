@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from 'components/common/Modal';
 import Help from 'components/Help';
 import { useRouter } from 'next/router';
@@ -78,4 +78,4 @@ const Header = (): JSX.Element => {
   );
 };
 
-export default memo(Header);
+export default Header;

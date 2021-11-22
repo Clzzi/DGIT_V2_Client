@@ -1,6 +1,5 @@
 import * as S from './styles';
 import useProperty from 'hooks/property/useProperty';
-import { memo } from 'react';
 
 const PropertyBar = (): JSX.Element => {
   const { propertyList } = useProperty();
@@ -20,4 +19,4 @@ const PropertyBar = (): JSX.Element => {
   );
 };
 
-export default memo(PropertyBar);
+export default PropertyBar

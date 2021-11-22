@@ -1,7 +1,6 @@
 import * as S from './styles';
 import useNav from 'hooks/nav/useNav';
 import dynamic from 'next/dynamic';
-import { memo } from 'react';
 
 const Theme = dynamic(() => import('components/Theme'), { ssr: false });
 const NavButton = dynamic(() => import('components/Nav/NavButton'), {
@@ -43,4 +42,4 @@ const Nav = (): JSX.Element => {
   );
 };
 
-export default memo(Nav);
+export default Nav;

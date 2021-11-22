@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import * as S from './styles';
 import useAccount from 'hooks/account/useAccount';
 import { IAccount } from 'types/common.type';
@@ -39,4 +39,4 @@ const Account = ({ isEdit, set }: IAccount): JSX.Element => {
   );
 };
 
-export default memo(Account);
+export default Account;

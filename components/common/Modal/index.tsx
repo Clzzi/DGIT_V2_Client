@@ -1,6 +1,6 @@
 import * as S from './styles';
 import { IModal } from 'types/common.type';
-import { memo, useEffect } from 'react';
+import { useEffect } from 'react';
 import useModal from 'hooks/modal/useModal';
 
 const Modal = ({
@@ -27,4 +27,4 @@ const Modal = ({
   );
 };
 
-export default memo(Modal);
+export default Modal;

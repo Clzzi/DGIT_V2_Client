@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import * as S from './styles';
 
 const SkeletonUserItem = (): JSX.Element => {
@@ -34,4 +33,4 @@ const SkeletonUserItem = (): JSX.Element => {
   );
 };
 
-export default memo(SkeletonUserItem);
+export default SkeletonUserItem;

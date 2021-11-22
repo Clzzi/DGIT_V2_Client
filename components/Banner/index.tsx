@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import * as S from './styles';
 
 const Banner = (): JSX.Element => {
@@ -9,4 +8,4 @@ const Banner = (): JSX.Element => {
   );
 };
 
-export default memo(Banner);
+export default Banner;

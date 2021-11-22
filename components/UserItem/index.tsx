@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { getMedal } from 'util/getMedal';
 import { IUserItem } from 'types/common.type';
 import { getGithubURL } from 'util/getGithubURL';
-import { memo } from 'react';
 
 const UserItem = ({
   image,
@@ -42,4 +41,4 @@ const UserItem = ({
   );
 };
 
-export default memo(UserItem);
+export default UserItem;

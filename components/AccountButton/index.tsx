@@ -1,6 +1,6 @@
 import * as S from './styles';
 import Token from 'lib/token';
-import { memo, useState } from 'react';
+import { useState } from 'react';
 import LightUserAdd from 'assets/LightUserAdd.svg';
 import LightUserEdit from 'assets/LightUserEdit.svg';
 import DarkUserAdd from 'assets/DarkUserAdd.svg';
@@ -42,4 +42,4 @@ const AccountButton = (): JSX.Element => {
   );
 };
 
-export default memo(AccountButton);
+export default AccountButton;

@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { IButton } from 'types/common.type';
 import * as S from './styles';
 
@@ -20,4 +19,4 @@ const Button: React.FC<IButton> = ({
   );
 };
 
-export default memo(Button);
+export default Button;
