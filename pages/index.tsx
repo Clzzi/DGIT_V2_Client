@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
+import styled from 'styled-components';
 
 const Header = dynamic(() => import('components/Header'));
 const Banner = dynamic(() => import('components/Banner'));
@@ -9,9 +10,14 @@ const PropertyBar = dynamic(() => import('components/PropertyBar'));
 const UserList = dynamic(() => import('components/UserList'));
 const AccountButton = dynamic(() => import('components/AccountButton'));
 
+const Wrapper = styled.div`
+  background-color: ${(props) => props.theme.background};
+  min-height: 100vh;
+`;
+
 const Home: NextPage = () => {
   return (
-    <div>
+    <Wrapper>
       <Head>
         <title>{'DGIT'}</title>
         <meta
@@ -31,7 +37,7 @@ const Home: NextPage = () => {
       <PropertyBar />
       <UserList />
       <AccountButton />
-    </div>
+    </Wrapper>
   );
 };
 

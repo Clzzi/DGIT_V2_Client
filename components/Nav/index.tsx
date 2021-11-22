@@ -1,7 +1,7 @@
 import * as S from './styles';
 import NavButton from './NavButton';
 import useNav from 'hooks/nav/useNav';
-import Filter from 'components/common/Filter';
+import Theme from 'components/Theme';
 
 const Nav = (): JSX.Element => {
   const [nav, onChangeNav] = useNav();
@@ -31,7 +31,7 @@ const Nav = (): JSX.Element => {
             }}
           />
         </S.NavButtonWrap>
-        <Filter />
+        <Theme />
       </S.NavContent>
     </S.Nav>
   );

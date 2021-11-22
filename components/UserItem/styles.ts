@@ -12,7 +12,7 @@ export const UserItem = styled.div`
   text-align: center;
   justify-content: start;
   flex-direction: row;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.mainContentBackground};
   border-bottom: 1px solid ${(props) => props.theme.mainBorder};
   color: ${(props) => props.theme.mainContent};
   font-size: ${FontConfig.font18};
