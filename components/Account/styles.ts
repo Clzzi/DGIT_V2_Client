@@ -45,7 +45,6 @@ export const SubTitle = styled.div<{ showing: boolean }>`
 `;
 
 export const Input = styled.input`
-  ${M.selectNone};
   width: 100%;
   color: ${(props) => props.theme.modalContent};
   font-size: ${FontConfig.font24};
