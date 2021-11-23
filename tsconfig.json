@@ -17,6 +17,6 @@
     "baseUrl": ".",
     "rootDir": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/_document.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/_document.ts", "__mocks__/matchMedia.ts"],
   "exclude": ["node_modules"]
 }
