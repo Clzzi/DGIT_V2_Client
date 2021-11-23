@@ -20,11 +20,17 @@ const requestHandler = async (
     const nowDate: number = Date.now() / 1000;
 
     if (decode.exp < nowDate) {
-      const data: IRefreshToken = await getRefreshToken({
-        refreshToken: usingRefreshToken,
-      });
-      Token.setToken(ACCESS_TOKEN_KEY, data.data);
-      accessToken = data.data;
+      try {
+        const data: IRefreshToken = await getRefreshToken({
+          refreshToken: usingRefreshToken,
+        });
+        Token.setToken(ACCESS_TOKEN_KEY, data.data);
+        accessToken = data.data;
+      } catch (e: any) {
+        if (e.response.data.status === 410) {
+          Token.removeToken();
+        }
+      }
     }
     config.headers![TOKEN_HEADER_KEY] = getBearer(accessToken);
   }
