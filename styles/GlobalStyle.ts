@@ -1,3 +1,4 @@
+import * as M from 'styles/moduleStyle';
 import reset from 'styled-reset';
 import { createGlobalStyle } from 'styled-components';
 
@@ -34,6 +35,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+    ${M.selectNone};
+    ${M.dragNone};
     background-color: ${({ theme }) => theme.background};
     min-height: 100vh;
     }
