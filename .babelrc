@@ -6,9 +6,7 @@
       {
         "ssr": true,
         "displayName": true,
-        "preprocess": false,
-        "pure": true,
-        "fileName": true
+        "preprocess": false
       }
     ]
   ]
