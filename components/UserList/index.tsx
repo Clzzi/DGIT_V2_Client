@@ -17,15 +17,6 @@ const UserList = (): JSX.Element => {
   const { weekUser } = useWeekUser();
   const { weekTopUser } = useWeekTop();
 
-  const UserItemWrapper = styled.div`
-    width: 100vw;
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-  `;
-
   const getUserList = () => {
     if (totalUser.users && weekUser.length) {
       switch (nav) {
@@ -81,13 +72,13 @@ const UserList = (): JSX.Element => {
       {weekTopUser.length ? (
         <S.UserListContent>{getUserList()}</S.UserListContent>
       ) : (
-        <UserItemWrapper>
+        <S.UserItemWrapper>
           <SkeletonUserItem />
           <SkeletonUserItem />
           <SkeletonUserItem />
           <SkeletonUserItem />
           <SkeletonUserItem />
-        </UserItemWrapper>
+        </S.UserItemWrapper>
       )}
     </S.UserList>
   );

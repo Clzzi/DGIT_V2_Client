@@ -18,3 +18,12 @@ export const UserListContent = styled.div`
     margin-bottom: 100px;
   }
 `;
+
+export const UserItemWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+`;

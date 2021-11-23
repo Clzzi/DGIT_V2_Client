@@ -1,5 +1,6 @@
 {
   "name": "dgit-v2-client",
+  "version": "1.0.0",
   "private": true,
   "homepage": "http://dgit.b1nd.com",
   "scripts": {
