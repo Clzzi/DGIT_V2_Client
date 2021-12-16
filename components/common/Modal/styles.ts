@@ -7,6 +7,8 @@ export const Modal = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.background};
   border-radius: 10px;
+  max-width: 1060px;
+  max-height: 680px;
 `;
 
 export const ModalBackground = styled.div`

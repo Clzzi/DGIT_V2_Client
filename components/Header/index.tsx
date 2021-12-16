@@ -66,7 +66,7 @@ const Header = (): JSX.Element => {
       </S.Header>
 
       {isHelpModal && (
-        <Modal set={setIsHelpModal} width="1060px" height="680px">
+        <Modal set={setIsHelpModal} width="80%" height="50%">
           <Help />
         </Modal>
       )}
