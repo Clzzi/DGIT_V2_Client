@@ -1,14 +1,30 @@
 {
   "name": "dgit-v2-client",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "private": true,
   "homepage": "http://dgit.b1nd.com",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Clzzi",
+      "email": "clzzi1109@naver.com",
+      "url": "https://github.com/Clzzi"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --coverage --cache --detectOpenHandles"
+    "test": "jest --coverage --cache --detectOpenHandles",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{tsx,ts,jsx,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -43,8 +59,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest-styled-components": "^7.0.5",
+    "lint-staged": "^12.1.2",
     "msw": "^0.35.0",
     "prettier": "^2.4.1",
     "react-ga": "^3.3.0",
