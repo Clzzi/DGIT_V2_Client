@@ -10,6 +10,18 @@
     "lint": "next lint",
     "test": "jest --coverage --cache --detectOpenHandles"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.{ts, tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "axios": "^0.24.0",
     "jest": "^27.3.1",
@@ -43,8 +55,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest-styled-components": "^7.0.5",
+    "lint-staged": "^12.1.2",
     "msw": "^0.35.0",
     "prettier": "^2.4.1",
     "react-ga": "^3.3.0",
