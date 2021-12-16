@@ -8,16 +8,12 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --coverage --cache --detectOpenHandles"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
-    }
+    "test": "jest --coverage --cache --detectOpenHandles",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "*.{ts, tsx}": [
+    "**/*.{tsx,ts,jsx,js}": [
       "eslint --fix",
       "prettier --write"
     ]
