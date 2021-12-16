@@ -29,6 +29,7 @@ const UserItem = ({
             alt="profile"
             width={70}
             height={70}
+            layout="intrinsic"
           />
         </S.UserProfile>
         <S.UserName medal={getMedal(Number(rank))}>{name}</S.UserName>

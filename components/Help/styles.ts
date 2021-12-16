@@ -4,8 +4,8 @@ import { FontConfig } from 'styles/FontConfig';
 
 export const Help = styled.div`
   ${M.selectNone};
-  width: 860px;
-  height: 508px;
+  width: 80%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,19 +14,25 @@ export const Help = styled.div`
 `;
 
 export const HelpTitle = styled.div`
-  width: 848px;
-  height: 63px;
+  width: 100%;
+  height: 12.5%;
   border-bottom: 1px solid ${(props) => props.theme.modalBorder};
   & > div {
     font-size: ${FontConfig.font30};
     font-weight: bold;
     color: ${(props) => props.theme.mainContent};
   }
+  @media screen and (max-width: 767px) {
+    height: 7%;
+    & > div {
+      font-size: ${FontConfig.font16};
+    }
+  }
 `;
 
 export const HelpContent = styled.ol`
-  width: 860px;
-  height: 416px;
+  width: 100%;
+  height: 82.5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,5 +45,10 @@ export const HelpContent = styled.ol`
     font-weight: 400;
     word-break: keep-all;
     list-style: decimal;
+  }
+  @media screen and (max-width: 767px) {
+    & > li {
+      font-size: ${FontConfig.font14};
+    }
   }
 `;

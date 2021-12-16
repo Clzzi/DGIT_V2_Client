@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
 import * as M from 'styles/moduleStyle';
+import { getRem } from 'util/getRem';
 
 export const UserItem = styled.div`
   ${M.selectNone};
   position: relative;
-  width: 1410px;
+  width: 100%;
   height: 130px;
   display: flex;
   align-items: center;
@@ -21,21 +22,28 @@ export const UserItem = styled.div`
   &:hover {
     background-color: ${(props) => props.theme.navFilterBackground};
   }
+  @media screen and (max-width: 767px) {
+    font-size: ${getRem(14)};
+    height: 80px;
+  }
 `;
 
 export const UserRank = styled.div<{ rank: number }>`
-  width: 136px;
+  width: 9.7%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: ${(props) =>
     props.rank < 4 ? props.theme.hightlight : props.theme.mainContent};
+  @media screen and (max-width: 767px) {
+    width: 15%;
+  }
 `;
 
 export const UserProfile = styled.div`
   ${M.dragNone};
-  width: 91px;
+  width: 5.8%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,15 +51,22 @@ export const UserProfile = styled.div`
   border-radius: 50%;
   & > span > img {
     ${M.imgDragNone};
-    width: 70px;
-    height: 70px;
     border-radius: 50%;
+    @media screen and (max-width: 767px) {
+      min-height: 70% !important;
+      max-height: 70% !important;
+      min-width: 70% !important;
+      max-width: 70% !important;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    width: 20%;
   }
 `;
 
 export const UserName = styled.div<{ medal: string | null }>`
   position: relative;
-  width: 136px;
+  width: 9.8%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,23 +77,35 @@ export const UserName = styled.div<{ medal: string | null }>`
     height: 24px;
     margin: 2% 0px 0px 2%;
     display: ${(props) => (props.medal ? 'block' : 'none')};
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    width: 20%;
   }
 `;
 
 export const UserId = styled.div`
-  width: 159px;
+  width: 11.8%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    width: 20%;
+  }
 `;
 
 export const UserCommit = styled.div`
-  width: 151px;
+  width: 10.5%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    width: 15%;
+  }
 `;
 
 export const UserIntro = styled.div`
@@ -87,6 +114,9 @@ export const UserIntro = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const UserKeep = styled.span`
@@ -94,4 +124,7 @@ export const UserKeep = styled.span`
   top: 75%;
   left: 17.5%;
   font-size: ${FontConfig.font16};
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;

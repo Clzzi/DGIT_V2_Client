@@ -6,14 +6,18 @@ export const UserList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    padding: 0px 25px;
+  }
 `;
 
 export const UserListContent = styled.div`
-  width: 1410px;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1410px;
   &:last-child {
     margin-bottom: 100px;
   }

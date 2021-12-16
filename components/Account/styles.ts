@@ -3,13 +3,16 @@ import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
 
 export const Account = styled.div`
-  width: 554px;
-  height: 313px;
+  width: 68% !important;
+  height: 61.5% !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    height: 55% !important;
+  }
 `;
 
 export const Title = styled.div`
@@ -22,6 +25,9 @@ export const Title = styled.div`
   color: ${(props) => props.theme.modalTitle};
   font-size: ${FontConfig.font30};
   font-weight: bold;
+  @media screen and (max-width: 767px) {
+    font-size: ${FontConfig.font16};
+  }
 `;
 
 export const Content = styled.div`
@@ -32,6 +38,7 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: start;
+  font-size: ${FontConfig.font16};
 `;
 
 export const SubTitle = styled.div<{ showing: boolean }>`
@@ -42,6 +49,9 @@ export const SubTitle = styled.div<{ showing: boolean }>`
   opacity: ${(props) => (props.showing ? 1 : 0)};
   font-size: ${FontConfig.font18};
   transition: 0.2s ease-in-out;
+  @media screen and (max-width: 767px) {
+    font-size: ${FontConfig.font16};
+  }
 `;
 
 export const Input = styled.input`
@@ -57,6 +67,12 @@ export const Input = styled.input`
     font-size: ${FontConfig.font24};
     font-weight: 400;
     color: ${(props) => props.theme.modalSubTitle};
+  }
+  @media screen and (max-width: 767px) {
+    font-size: ${FontConfig.font16};
+    &::placeholder {
+      font-size: ${FontConfig.font16};
+    }
   }
 `;
 
