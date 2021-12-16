@@ -94,6 +94,7 @@ export const UserId = styled.div`
   text-align: center;
   @media screen and (max-width: 767px) {
     width: 20%;
+    word-break: break-all;
   }
 `;
 
