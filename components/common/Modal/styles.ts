@@ -9,6 +9,7 @@ export const Modal = styled.div`
   border-radius: 10px;
   max-width: 1060px;
   max-height: 680px;
+  min-height: 350px;
 `;
 
 export const ModalBackground = styled.div`
