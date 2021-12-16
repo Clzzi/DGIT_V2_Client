@@ -3,7 +3,20 @@ import reset from 'styled-reset';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${reset} 
+
+  @font-face {
+    font-family: 'SB AGGRO';
+    font-weight: normal;
+    src: url('/static/font/SB AGGRO.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'YiSunShin';
+    font-weight: normal;
+    src: url('/static/font/YiSunShin.woff') format('woff');
+  }
+
     * {
       padding: 0;
       margin: 0;
