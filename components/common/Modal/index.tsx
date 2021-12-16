@@ -6,8 +6,8 @@ import useModal from 'hooks/modal/useModal';
 const Modal = ({
   children,
   set,
-  width = '750px',
-  height = '474px',
+  width = '49%',
+  height = '38%',
 }: IModal): JSX.Element => {
   const [el, clickOutside] = useModal(set);
 

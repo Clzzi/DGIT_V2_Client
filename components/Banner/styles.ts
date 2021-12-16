@@ -14,7 +14,7 @@ export const BannerWrap = styled.div`
     border-radius: 16px;
     text-align: right;
     padding: 45px 90px 45px 0px;
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 767px) {
       height: 130px;
       padding: 0px 25px;
       display: flex;
@@ -24,7 +24,7 @@ export const BannerWrap = styled.div`
     }
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 767px) {
     padding: 0px 25px;
   }
 `;
@@ -35,7 +35,7 @@ export const Title = styled.div`
   font-weight: lighter;
   color: white;
   line-height: 2.5rem;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 767px) {
     font-size: ${getRem(16)};
   }
 `;
@@ -45,8 +45,7 @@ export const Content = styled.div`
   font-size: ${getRem(22)};
   font-weight: lighter;
   color: white;
-  word-break: keep-all;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 767px) {
     font-size: ${getRem(13.5)};
     width: 50%;
     display: inline-block;

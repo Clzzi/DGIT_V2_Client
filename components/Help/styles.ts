@@ -22,6 +22,12 @@ export const HelpTitle = styled.div`
     font-weight: bold;
     color: ${(props) => props.theme.mainContent};
   }
+  @media screen and (max-width: 767px) {
+    height: 7%;
+    & > div {
+      font-size: ${FontConfig.font16};
+    }
+  }
 `;
 
 export const HelpContent = styled.ol`
@@ -39,5 +45,10 @@ export const HelpContent = styled.ol`
     font-weight: 400;
     word-break: keep-all;
     list-style: decimal;
+  }
+  @media screen and (max-width: 767px) {
+    & > li {
+      font-size: ${FontConfig.font14};
+    }
   }
 `;

@@ -2,6 +2,7 @@ import { IFontConfig } from 'types/theme.type';
 import { getRem } from 'util/getRem';
 
 export const FontConfig: IFontConfig = {
+  font14: getRem(14),
   font15: getRem(15),
   font16: getRem(16),
   font18: getRem(18),

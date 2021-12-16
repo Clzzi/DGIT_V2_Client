@@ -7,7 +7,7 @@ export const Header = styled.header`
   justify-content: center;
   align-items: center;
   text-align: center;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 767px) {
     padding: 0px 25px;
   }
 `;
@@ -29,7 +29,7 @@ export const HeaderButton = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 767px) {
     width: 134px;
     height: 28px;
   }

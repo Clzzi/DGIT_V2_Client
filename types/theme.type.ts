@@ -1,4 +1,5 @@
 export interface IFontConfig {
+  font14: string;
   font15: string;
   font16: string;
   font18: string;

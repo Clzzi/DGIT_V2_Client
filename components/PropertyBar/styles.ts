@@ -11,7 +11,7 @@ export const PropertyBar = styled.section`
   justify-content: center;
   align-items: center;
   text-align: center;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 767px) {
     height: 32px;
     padding: 0px 25px;
   }
@@ -40,7 +40,27 @@ export const Property = styled.div<{ number: number }>`
   text-align: center;
   transition: 0.2s ease-in-out;
   font-size: ${FontConfig.font16};
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 767px) {
     font-size: ${getRem(13)};
+    &:nth-child(1) {
+      width: 15%;
+    }
+    &:nth-child(2) {
+      width: 20%;
+    }
+    &:nth-child(3) {
+      width: 20%;
+    }
+    &:nth-child(4) {
+      width: 20%;
+    }
+    &:nth-child(5) {
+      width: 15%;
+    }
+    &:nth-child(6) {
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
   }
 `;
