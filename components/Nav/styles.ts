@@ -1,6 +1,7 @@
 import * as M from 'styles/moduleStyle';
 import styled from 'styled-components';
 import { FontConfig } from 'styles/FontConfig';
+import { getRem } from 'util/getRem';
 
 export const Nav = styled.div`
   width: 100vw;
@@ -18,6 +19,10 @@ export const NavContent = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
+  @media screen and (max-width: 1000px) {
+    height: 64px;
+    padding: 0px 25px;
+  }
 `;
 
 export const NavButtonWrap = styled.div`
@@ -29,6 +34,10 @@ export const NavButtonWrap = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
+  @media screen and (max-width: 1000px) {
+    width: 160px;
+    margin: 0px;
+  }
 `;
 
 export const NavButton = styled.div<{ showing: boolean }>`
@@ -45,5 +54,11 @@ export const NavButton = styled.div<{ showing: boolean }>`
     font-weight: bold;
     color: ${(props) =>
       props.showing ? props.theme.navTitle : props.theme.navNoneSelect};
+    @media screen and (max-width: 1000px) {
+      font-size: ${getRem(15)};
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    height: 28px;
   }
 `;

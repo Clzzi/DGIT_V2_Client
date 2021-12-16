@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getRem } from 'util/getRem';
 
 export const BannerWrap = styled.div`
   width: 100vw;
@@ -30,23 +31,23 @@ export const BannerWrap = styled.div`
 
 export const Title = styled.div`
   font-family: 'SB AGGRO' !important;
-  font-size: 26px;
+  font-size: ${getRem(26)};
   font-weight: lighter;
   color: white;
   line-height: 2.5rem;
   @media screen and (max-width: 1000px) {
-    font-size: 16px;
+    font-size: ${getRem(16)};
   }
 `;
 
 export const Content = styled.div`
   font-family: 'YiSunShin' !important;
-  font-size: 22px;
+  font-size: ${getRem(22)};
   font-weight: lighter;
   color: white;
   word-break: keep-all;
   @media screen and (max-width: 1000px) {
-    font-size: 13.5px;
+    font-size: ${getRem(13.5)};
     width: 50%;
     display: inline-block;
   }

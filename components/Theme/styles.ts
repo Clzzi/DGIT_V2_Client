@@ -22,6 +22,15 @@ export const ThemeLabel = styled.label`
     background-color: ${({ theme }) => theme.themeBall};
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
     transition: 0.2s;
+    @media screen and (max-width: 1000px) {
+      margin: 4.1px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    width: 42px;
+    height: 24px;
   }
 `;
 export const Theme = styled.input`
@@ -41,6 +50,11 @@ export const Theme = styled.input`
       margin-left: 33px;
       transition: 0.2.5s ease-in-out;
       background-color: ${({ theme }) => theme.themeBall};
+      @media screen and (max-width: 1000px) {
+        margin-left: 21px;
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 `;

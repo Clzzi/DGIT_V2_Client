@@ -1,15 +1,15 @@
 export const getPropertyWidth = (number: number): string => {
   switch (number) {
     case 0:
-      return '136px';
+      return '11.8%';
     case 1:
-      return '91px';
+      return '8%';
     case 2:
-      return '136px';
+      return '11.8%';
     case 3:
-      return '159px';
+      return '13.8%';
     case 4:
-      return '151px';
+      return '13.1%';
     default:
       return 'auto';
   }
