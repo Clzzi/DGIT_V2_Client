@@ -1,8 +1,16 @@
 {
   "name": "dgit-v2-client",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "private": true,
   "homepage": "http://dgit.b1nd.com",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Clzzi",
+      "email": "clzzi1109@naver.com",
+      "url": "https://github.com/Clzzi"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
