@@ -15,4 +15,8 @@ export const Button = styled.div<Omit<IButton, 'click' | 'message'>>`
   align-items: center;
   text-align: center;
   cursor: pointer;
+  @media screen and (max-width: 1000px) {
+    width: 62px;
+    height: 28px;
+  }
 `;
