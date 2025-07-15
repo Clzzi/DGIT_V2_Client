@@ -1,3 +1,5 @@
+ > **현재 해당 서비스는 종료된 상태입니다 (2022 ~ 2024)**
+
 ### DGIT은 대구소프트웨어고등학교 학생들의  Github 기여도를 표시하는 서비스입니다.
 > 학생들의 더 나은 개발 문화 및 동기부여의 목적으로 제작되었습니다😊
 
@@ -16,11 +18,8 @@
 <span>
   <img alt="StyledComponents" src ="https://img.shields.io/badge/StyledComponents-DB7093.svg?&style=for-the-badge&logo=styled-components&logoColor=FFFFFF"/>
   <img alt="Typescript" src ="https://img.shields.io/badge/TYPESCRIPT-3178C6.svg?&style=for-the-badge&logo=TypeScript&logoColor=ffffff"/>
-  <img alt="GithubPages" src ="https://img.shields.io/badge/Github Pages-222222.svg?&style=for-the-badge&logo=GitHub Pages&logoColor=ffffff"/>
   <img alt="NEXTJS" src ="https://img.shields.io/badge/NEXT JS-000000.svg?&style=for-the-badge&logo=Next.js&logoColor=FFFFFF"/>
   <img alt="RECOIL" src ="https://img.shields.io/badge/RECOIL-3578E5.svg?&style=for-the-badge&logo=React&logoColor=ffffff"/>
   <img alt="JEST" src ="https://img.shields.io/badge/JEST-C21325.svg?&style=for-the-badge&logo=Jest&logoColor=ffffff"/>
-  <img alt="TESTINGLIBRARY" src ="https://img.shields.io/badge/RTL-E33332.svg?&style=for-the-badge&logo=Testing Library&logoColor=ffffff"/>
   <img alt="ESLINT" src ="https://img.shields.io/badge/ESLINT-4B32C3.svg?&style=for-the-badge&logo=ESLint&logoColor=ffffff"/>
-  <img alt="GITHUBACTIONS" src ="https://img.shields.io/badge/GitHub Actions-2088FF.svg?&style=for-the-badge&logo=GitHub Actions&logoColor=ffffff"/>
 </span>
